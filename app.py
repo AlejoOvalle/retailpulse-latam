@@ -971,25 +971,37 @@ st.markdown("#### 🧠 Diagnóstico Ejecutivo")
 for diag in diagnosticos:
     nivel = diag["nivel"]
     box_class = "diagnosis-box" + (" warning" if nivel == "warning" else " ok" if nivel == "ok" else "")
-    cta_html = ""
-    if diag["cta"]:
-        cta_html = """
-        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #1E2A3A;">
-            <a href="https://www.aovalle.com" target="_blank"
-               style="color: #4FC3F7; font-size: 0.8rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em;">
-               → Solicitar diagnóstico personalizado · aovalle.com ↗
-            </a>
-        </div>
-        """
+
+    # Renderizar el box del diagnóstico SIN el CTA adentro.
+    # Streamlit sanitiza <a> anidados dentro de divs con estilos inline
+    # (los convierte en texto plano). Solución: dos st.markdown() separados.
     st.markdown(f"""
     <div class="{box_class}">
         <div class="diagnosis-title">{diag["titulo"]}</div>
         <div style="font-size: 0.875rem; color: #94A3B8; line-height: 1.7;">
             {diag["cuerpo"]}
         </div>
-        {cta_html}
     </div>
     """, unsafe_allow_html=True)
+
+    # CTA como markdown nativo — Streamlit renderiza links Markdown sin sanitizar
+    if diag["cta"]:
+        st.markdown(
+            '<div style="'
+            'margin-top: -0.5rem; margin-bottom: 1rem; '
+            'padding: 0.6rem 1.5rem; '
+            'background: #0D1420; '
+            'border: 1px solid #1E2A3A; border-top: none; '
+            'border-radius: 0 0 8px 8px;'
+            '">'
+            '<a href="https://www.aovalle.com" target="_blank" '
+            'style="color: #4FC3F7; font-size: 0.8rem; font-weight: 600; '
+            'text-decoration: none; letter-spacing: 0.05em;">'
+            '→ Solicitar diagnóstico personalizado · aovalle.com ↗'
+            '</a>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
 
 st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
