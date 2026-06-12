@@ -43,13 +43,17 @@ st.markdown("""
 
   .stApp { background: #F1F5F9; color: #1E293B; }
 
-  /* ── SIDEBAR ── */
-  [data-testid="stSidebar"] {
-    background: #FFFFFF !important;
-    border-right: 1px solid #E2E8F0;
+  /* ── SIDEBAR — fondo oscuro ── */
+  [data-testid="stSidebar"],
+  [data-testid="stSidebar"] > div,
+  [data-testid="stSidebar"] > div:first-child,
+  section[data-testid="stSidebar"] {
+    background: #0B1117 !important;
+    background-color: #0B1117 !important;
+    border-right: 1px solid #1E2D3D !important;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #0284C7;
+    color: #38BDF8 !important;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -57,9 +61,29 @@ st.markdown("""
     margin-top: 1.6rem;
     margin-bottom: 0.3rem;
     padding-bottom: 0.35rem;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid #1E2D3D !important;
   }
-  .stSlider > div > div > div { background: #CBD5E1 !important; }
+  /* todos los textos dentro del sidebar */
+  [data-testid="stSidebar"] label { color: #CBD5E1 !important; }
+  [data-testid="stSidebar"] p     { color: #94A3B8 !important; }
+  [data-testid="stSidebar"] span  { color: #CBD5E1 !important; }
+  [data-testid="stSidebar"] .stRadio label   { color: #CBD5E1 !important; }
+  [data-testid="stSidebar"] .stCheckbox span { color: #CBD5E1 !important; }
+  /* expanders */
+  [data-testid="stSidebar"] [data-testid="stExpander"] {
+    background: #131C27 !important;
+    border: 1px solid #1E2D3D !important;
+  }
+  [data-testid="stSidebar"] [data-testid="stExpanderToggleIcon"] { color: #94A3B8 !important; }
+  [data-testid="stSidebar"] .streamlit-expanderHeader { color: #94A3B8 !important; }
+  /* number inputs */
+  [data-testid="stSidebar"] input {
+    background: #0D1520 !important;
+    border: 1px solid #1E2D3D !important;
+    color: #E2E8F0 !important;
+  }
+  /* sliders */
+  .stSlider > div > div > div { background: #1E2D3D !important; }
   .stSlider > div > div > div > div { background: #0EA5E9 !important; }
 
   /* ── HEADINGS ── */
