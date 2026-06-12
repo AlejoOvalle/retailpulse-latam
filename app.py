@@ -517,6 +517,12 @@ def grafico_pl_waterfall(pl):
     fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
+def hex_rgba(hex_color, alpha=1.0):
+    """Convierte #RRGGBB → rgba(r,g,b,a). Plotly no acepta hex de 8 dígitos."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
 def grafico_mix_canales(canales_data):
     nombres  = list(canales_data.keys())
     ingresos = [c["ingresos"] for c in canales_data.values()]
@@ -525,7 +531,7 @@ def grafico_mix_canales(canales_data):
 
     fig = go.Figure()
     fig.add_trace(go.Bar(name="Ingresos", x=nombres, y=ingresos,
-                         marker_color=[c + "99" for c in colores],
+                         marker_color=[hex_rgba(c, 0.5) for c in colores],
                          text=[fmt_clp(v) for v in ingresos], textposition="outside",
                          textfont=dict(size=10, color="#94A3B8")))
     fig.add_trace(go.Bar(name="Contribución Neta", x=nombres, y=contribs,
