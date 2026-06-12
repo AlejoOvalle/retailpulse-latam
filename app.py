@@ -41,19 +41,15 @@ st.markdown("""
 
   html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 
-  .stApp { background: #F1F5F9; color: #1E293B; }
+  .stApp { background: #080C14; color: #E8EDF5; }
 
-  /* ── SIDEBAR — fondo oscuro ── */
-  [data-testid="stSidebar"],
-  [data-testid="stSidebar"] > div,
-  [data-testid="stSidebar"] > div:first-child,
-  section[data-testid="stSidebar"] {
-    background: #0B1117 !important;
-    background-color: #0B1117 !important;
-    border-right: 1px solid #1E2D3D !important;
+  /* ── SIDEBAR ── */
+  [data-testid="stSidebar"] {
+    background: #0B1017 !important;
+    border-right: 1px solid #1A2535;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #38BDF8 !important;
+    color: #38BDF8;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -61,35 +57,15 @@ st.markdown("""
     margin-top: 1.6rem;
     margin-bottom: 0.3rem;
     padding-bottom: 0.35rem;
-    border-bottom: 1px solid #1E2D3D !important;
+    border-bottom: 1px solid #1A2535;
   }
-  /* todos los textos dentro del sidebar */
-  [data-testid="stSidebar"] label { color: #CBD5E1 !important; }
-  [data-testid="stSidebar"] p     { color: #94A3B8 !important; }
-  [data-testid="stSidebar"] span  { color: #CBD5E1 !important; }
-  [data-testid="stSidebar"] .stRadio label   { color: #CBD5E1 !important; }
-  [data-testid="stSidebar"] .stCheckbox span { color: #CBD5E1 !important; }
-  /* expanders */
-  [data-testid="stSidebar"] [data-testid="stExpander"] {
-    background: #131C27 !important;
-    border: 1px solid #1E2D3D !important;
-  }
-  [data-testid="stSidebar"] [data-testid="stExpanderToggleIcon"] { color: #94A3B8 !important; }
-  [data-testid="stSidebar"] .streamlit-expanderHeader { color: #94A3B8 !important; }
-  /* number inputs */
-  [data-testid="stSidebar"] input {
-    background: #0D1520 !important;
-    border: 1px solid #1E2D3D !important;
-    color: #E2E8F0 !important;
-  }
-  /* sliders */
-  .stSlider > div > div > div { background: #1E2D3D !important; }
-  .stSlider > div > div > div > div { background: #0EA5E9 !important; }
+  .stSlider > div > div > div { background: #1A2535 !important; }
+  .stSlider > div > div > div > div { background: #38BDF8 !important; }
 
   /* ── HEADINGS ── */
-  h1 { color: #0F172A !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
-  h2 { color: #1E293B !important; font-weight: 600 !important; }
-  h3 { color: #475569 !important; font-weight: 500 !important; }
+  h1 { color: #F1F5F9 !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
+  h2 { color: #CBD5E1 !important; font-weight: 600 !important; }
+  h3 { color: #94A3B8 !important; font-weight: 500 !important; }
 
   /* ── MODO BADGE ── */
   .modo-badge {
@@ -104,13 +80,13 @@ st.markdown("""
     text-transform: uppercase;
     margin-bottom: 0.25rem;
   }
-  .modo-gerente { background: #E0F2FE; color: #0284C7; border: 1px solid #BAE6FD; }
-  .modo-pyme    { background: #DCFCE7; color: #16A34A; border: 1px solid #86EFAC; }
+  .modo-gerente { background: #0C2340; color: #38BDF8; border: 1px solid #1E3A5F; }
+  .modo-pyme    { background: #1A2E0F; color: #86EFAC; border: 1px solid #2D4A1E; }
 
   /* ── METRIC CARDS ── */
   .metric-card {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background: #0D1420;
+    border: 1px solid #1A2535;
     border-radius: 10px;
     padding: 1.1rem 1.3rem;
     position: relative;
@@ -122,7 +98,7 @@ st.markdown("""
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0EA5E9, #0284C7);
+    background: linear-gradient(90deg, #38BDF8, #0284C7);
   }
   .metric-card.danger::before  { background: linear-gradient(90deg, #F87171, #DC2626); }
   .metric-card.warning::before { background: linear-gradient(90deg, #FBBF24, #D97706); }
@@ -130,19 +106,19 @@ st.markdown("""
   .metric-card.purple::before  { background: linear-gradient(90deg, #C084FC, #9333EA); }
   .metric-card .label {
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #94A3B8; margin-bottom: 0.45rem;
+    text-transform: uppercase; color: #475569; margin-bottom: 0.45rem;
   }
   .metric-card .value {
     font-family: 'DM Mono', monospace;
-    font-size: 1.5rem; font-weight: 500; color: #0F172A; line-height: 1.1;
+    font-size: 1.5rem; font-weight: 500; color: #F1F5F9; line-height: 1.1;
   }
   .metric-card .value.sm { font-size: 1.15rem; }
   .metric-card .sub {
-    font-size: 0.72rem; color: #94A3B8; margin-top: 0.35rem; line-height: 1.4;
+    font-size: 0.72rem; color: #64748B; margin-top: 0.35rem; line-height: 1.4;
   }
   .metric-card .delta { font-size: 0.72rem; margin-top: 0.3rem; }
-  .metric-card .delta.neg { color: #DC2626; }
-  .metric-card .delta.pos { color: #16A34A; }
+  .metric-card .delta.neg { color: #F87171; }
+  .metric-card .delta.pos { color: #34D399; }
 
   /* ── SECTION TABS ── */
   .section-tab {
@@ -150,15 +126,15 @@ st.markdown("""
     padding: 0.5rem 1.1rem;
     border-radius: 6px 6px 0 0;
     font-size: 0.78rem; font-weight: 600;
-    background: #FFFFFF; border: 1px solid #E2E8F0;
-    border-bottom: none; color: #94A3B8;
+    background: #0D1420; border: 1px solid #1A2535;
+    border-bottom: none; color: #64748B;
   }
-  .section-tab.active { background: #F0F9FF; color: #0284C7; border-color: #0EA5E9; }
+  .section-tab.active { background: #111827; color: #38BDF8; border-color: #38BDF8; }
 
   /* ── CANAL ROWS ── */
   .canal-row {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background: #0D1420;
+    border: 1px solid #1A2535;
     border-radius: 8px;
     padding: 0.85rem 1.1rem;
     margin-bottom: 0.4rem;
@@ -167,58 +143,58 @@ st.markdown("""
   .canal-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .canal-name { font-size: 0.8rem; font-weight: 600; color: #1E293B; min-width: 110px; }
+  .canal-name { font-size: 0.8rem; font-weight: 600; color: #CBD5E1; min-width: 110px; }
   .canal-bar-bg {
-    flex: 1; background: #E2E8F0; border-radius: 3px; height: 6px; position: relative;
+    flex: 1; background: #1A2535; border-radius: 3px; height: 6px; position: relative;
   }
   .canal-bar-fill {
     position: absolute; left: 0; top: 0; height: 6px; border-radius: 3px;
   }
-  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #64748B; min-width: 90px; text-align: right; }
+  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #94A3B8; min-width: 90px; text-align: right; }
   .canal-roas {
     font-family: 'DM Mono', monospace; font-size: 0.75rem;
     padding: 0.15rem 0.5rem; border-radius: 4px; min-width: 52px; text-align: center;
   }
-  .roas-ok      { background: #DCFCE7; color: #15803D; }
-  .roas-warning { background: #FEF9C3; color: #A16207; }
-  .roas-danger  { background: #FEE2E2; color: #B91C1C; }
+  .roas-ok      { background: #052E16; color: #34D399; }
+  .roas-warning { background: #451A03; color: #FBBF24; }
+  .roas-danger  { background: #450A0A; color: #F87171; }
 
   /* ── P&L TABLE ── */
   .pnl-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #E2E8F0; }
+  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #1A2535; }
   .pnl-table tr:last-child td { border-bottom: none; }
-  .pnl-table .pnl-label { color: #64748B; }
-  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #1E293B; }
-  .pnl-table .pnl-total td { border-top: 1px solid #0EA5E9; padding-top: 0.7rem; }
-  .pnl-table .pnl-total .pnl-label { color: #0284C7; font-weight: 700; }
-  .pnl-table .pnl-total .pnl-val   { color: #0284C7; font-weight: 700; }
-  .pnl-table .pnl-neg { color: #DC2626 !important; }
-  .pnl-table .pnl-pos { color: #16A34A !important; }
-  .pnl-section td { background: #F8FAFC; color: #94A3B8 !important;
+  .pnl-table .pnl-label { color: #94A3B8; }
+  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #E2E8F0; }
+  .pnl-table .pnl-total td { border-top: 1px solid #38BDF8; padding-top: 0.7rem; }
+  .pnl-table .pnl-total .pnl-label { color: #38BDF8; font-weight: 700; }
+  .pnl-table .pnl-total .pnl-val   { color: #38BDF8; font-weight: 700; }
+  .pnl-table .pnl-neg { color: #F87171 !important; }
+  .pnl-table .pnl-pos { color: #34D399 !important; }
+  .pnl-section td { background: #0B1017; color: #475569 !important;
     font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 0.9rem; }
 
   /* ── DIAGNOSIS BOX ── */
   .diag-box {
-    background: #FFF5F5;
-    border: 1px solid #FCA5A5; border-left: 4px solid #DC2626;
+    background: #0D1420;
+    border: 1px solid #DC2626; border-left: 4px solid #DC2626;
     border-radius: 8px; padding: 1.1rem 1.3rem; margin-top: 0.75rem;
   }
-  .diag-box.warning { background: #FFFBEB; border-color: #FCD34D; border-left-color: #D97706; }
-  .diag-box.ok      { background: #F0FDF4; border-color: #86EFAC; border-left-color: #16A34A; }
-  .diag-box.purple  { background: #FAF5FF; border-color: #D8B4FE; border-left-color: #9333EA; }
+  .diag-box.warning { border-color: #D97706; border-left-color: #D97706; }
+  .diag-box.ok      { border-color: #059669; border-left-color: #059669; }
+  .diag-box.purple  { border-color: #9333EA; border-left-color: #9333EA; }
   .diag-title {
     font-size: 0.65rem; font-weight: 800; letter-spacing: 0.14em;
     text-transform: uppercase; margin-bottom: 0.5rem;
   }
-  .diag-box .diag-title         { color: #B91C1C; }
-  .diag-box.warning .diag-title { color: #92400E; }
-  .diag-box.ok .diag-title      { color: #15803D; }
-  .diag-box.purple .diag-title  { color: #7E22CE; }
-  .diag-body { font-size: 0.85rem; color: #475569; line-height: 1.75; }
+  .diag-box .diag-title         { color: #F87171; }
+  .diag-box.warning .diag-title { color: #FBBF24; }
+  .diag-box.ok .diag-title      { color: #34D399; }
+  .diag-box.purple .diag-title  { color: #C084FC; }
+  .diag-body { font-size: 0.85rem; color: #94A3B8; line-height: 1.75; }
 
   /* ── EQUILIBRIO BAR ── */
   .eq-bar-bg {
-    background: #E2E8F0; border-radius: 4px; height: 10px;
+    background: #1A2535; border-radius: 4px; height: 10px;
     position: relative; overflow: hidden; margin: 0.5rem 0;
   }
   .eq-bar-fill {
@@ -227,42 +203,42 @@ st.markdown("""
   }
   .eq-marker {
     position: absolute; top: -3px; width: 2px; height: 16px;
-    background: #64748B;
+    background: #F1F5F9;
   }
 
   /* ── DIVIDER ── */
-  .sdiv { border: none; border-top: 1px solid #E2E8F0; margin: 1.75rem 0; }
+  .sdiv { border: none; border-top: 1px solid #1A2535; margin: 1.75rem 0; }
 
   /* ── FOOTER ── */
   .footer-cta {
-    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-    border: 1px solid #BFDBFE; border-radius: 12px;
+    background: linear-gradient(135deg, #0D1420 0%, #0C1E35 100%);
+    border: 1px solid #1A2535; border-radius: 12px;
     padding: 1.75rem 2rem; text-align: center; margin-top: 2rem;
   }
 
   /* ── INPUTS ── */
   .stNumberInput input {
-    background: #FFFFFF !important; border: 1px solid #CBD5E1 !important;
-    color: #1E293B !important; font-family: 'DM Mono', monospace !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
+    color: #E8EDF5 !important; font-family: 'DM Mono', monospace !important;
     border-radius: 6px !important;
   }
   div[data-testid="stExpander"] {
-    background: #FFFFFF !important; border: 1px solid #E2E8F0 !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
     border-radius: 8px !important;
   }
-  .streamlit-expanderHeader { color: #64748B !important; }
+  .streamlit-expanderHeader { color: #94A3B8 !important; }
   .stTabs [data-baseweb="tab-list"] { background: transparent; gap: 4px; }
   .stTabs [data-baseweb="tab"] {
-    background: #FFFFFF !important; border: 1px solid #E2E8F0 !important;
-    color: #94A3B8 !important; border-radius: 6px 6px 0 0 !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
+    color: #64748B !important; border-radius: 6px 6px 0 0 !important;
     font-size: 0.8rem !important; padding: 0.5rem 1rem !important;
   }
   .stTabs [aria-selected="true"] {
-    background: #F0F9FF !important; color: #0284C7 !important;
-    border-color: #0EA5E9 !important;
+    background: #111827 !important; color: #38BDF8 !important;
+    border-color: #38BDF8 !important;
   }
   .stTabs [data-baseweb="tab-panel"] {
-    background: #FFFFFF; border: 1px solid #E2E8F0;
+    background: #0D1420; border: 1px solid #1A2535;
     border-radius: 0 8px 8px 8px; padding: 1.25rem;
   }
 </style>
@@ -301,8 +277,8 @@ def mc(label, value, sub=None, delta=None, kind="default", sm=False):
     </div>"""
 
 THEME = dict(
-    paper_bgcolor="#F8FAFC", plot_bgcolor="#F8FAFC",
-    font=dict(family="DM Sans", color="#64748B", size=11),
+    paper_bgcolor="#080C14", plot_bgcolor="#080C14",
+    font=dict(family="DM Sans", color="#94A3B8", size=11),
     margin=dict(l=16, r=16, t=36, b=16),
 )
 
@@ -312,7 +288,7 @@ THEME = dict(
 # ─────────────────────────────────────────────────────────────────────────────
 
 CANALES_DEF = {
-    "Orgánico/SEO":   {"color": "#0EA5E9", "dot": "#0EA5E9"},
+    "Orgánico/SEO":   {"color": "#38BDF8", "dot": "#38BDF8"},
     "Paid Ads":       {"color": "#F87171", "dot": "#F87171"},
     "Email/CRM":      {"color": "#34D399", "dot": "#34D399"},
     "Marketplace":    {"color": "#FBBF24", "dot": "#FBBF24"},
@@ -524,21 +500,21 @@ def grafico_pl_waterfall(pl):
     ebitda = pl["ebitda_operativo"]
     measure = ["absolute","relative","relative","relative","relative","relative","total"]
     vals.append(ebitda)
-    colors_bar = ["#0EA5E9","#DC2626","#DC2626","#D97706","#D97706","#EA580C",
+    colors_bar = ["#38BDF8","#F87171","#F87171","#FBBF24","#FBBF24","#FB923C",
                   "#34D399" if ebitda >= 0 else "#F87171"]
     fig = go.Figure(go.Waterfall(
         orientation="v", measure=measure, x=labels, y=vals,
-        connector=dict(line=dict(color="#E2E8F0", width=1)),
-        increasing=dict(marker_color="#16A34A"),
-        decreasing=dict(marker_color="#DC2626"),
-        totals=dict(marker_color="#16A34A" if ebitda >= 0 else "#DC2626"),
+        connector=dict(line=dict(color="#1A2535", width=1)),
+        increasing=dict(marker_color="#34D399"),
+        decreasing=dict(marker_color="#F87171"),
+        totals=dict(marker_color="#34D399" if ebitda >= 0 else "#F87171"),
         text=[fmt_clp(v) for v in vals], textposition="outside",
-        textfont=dict(color="#475569", size=10),
+        textfont=dict(color="#CBD5E1", size=10),
     ))
-    fig.update_layout(title=dict(text="P&L Cascada — De Ingresos a EBITDA", font=dict(size=13, color="#1E293B")),
+    fig.update_layout(title=dict(text="P&L Cascada — De Ingresos a EBITDA", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#E2E8F0", zerolinecolor="#CBD5E1")
-    fig.update_xaxes(gridcolor="#E2E8F0")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def hex_rgba(hex_color, alpha=1.0):
@@ -557,16 +533,16 @@ def grafico_mix_canales(canales_data):
     fig.add_trace(go.Bar(name="Ingresos", x=nombres, y=ingresos,
                          marker_color=[hex_rgba(c, 0.5) for c in colores],
                          text=[fmt_clp(v) for v in ingresos], textposition="outside",
-                         textfont=dict(size=10, color="#64748B")))
+                         textfont=dict(size=10, color="#94A3B8")))
     fig.add_trace(go.Bar(name="Contribución Neta", x=nombres, y=contribs,
                          marker_color=colores,
                          text=[fmt_clp(v) for v in contribs], textposition="outside",
-                         textfont=dict(size=10, color="#1E293B")))
-    fig.update_layout(title=dict(text="Ingresos vs. Contribución por Canal", font=dict(size=13, color="#1E293B")),
-                      barmode="group", legend=dict(font=dict(color="#64748B"), bgcolor="#FFFFFF"),
+                         textfont=dict(size=10, color="#CBD5E1")))
+    fig.update_layout(title=dict(text="Ingresos vs. Contribución por Canal", font=dict(size=13, color="#CBD5E1")),
+                      barmode="group", legend=dict(font=dict(color="#94A3B8"), bgcolor="#0D1420"),
                       **THEME)
-    fig.update_yaxes(gridcolor="#E2E8F0", zerolinecolor="#CBD5E1")
-    fig.update_xaxes(gridcolor="#E2E8F0")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def grafico_roas_canales(canales_data):
@@ -576,16 +552,16 @@ def grafico_roas_canales(canales_data):
     fig = go.Figure(go.Bar(
         x=nombres, y=roas, marker_color=colores,
         text=[f"{r:.2f}x" for r in roas], textposition="outside",
-        textfont=dict(size=11, color="#1E293B"),
+        textfont=dict(size=11, color="#CBD5E1"),
     ))
-    fig.add_hline(y=3.0, line_dash="dot", line_color="#16A34A",
-                  annotation_text="Óptimo ≥ 3x", annotation_font_color="#16A34A", annotation_position="top right")
-    fig.add_hline(y=1.5, line_dash="dot", line_color="#D97706",
-                  annotation_text="Mínimo 1.5x", annotation_font_color="#D97706", annotation_position="bottom right")
-    fig.update_layout(title=dict(text="ROAS por Canal", font=dict(size=13, color="#1E293B")),
+    fig.add_hline(y=3.0, line_dash="dot", line_color="#34D399",
+                  annotation_text="Óptimo ≥ 3x", annotation_font_color="#34D399", annotation_position="top right")
+    fig.add_hline(y=1.5, line_dash="dot", line_color="#FBBF24",
+                  annotation_text="Mínimo 1.5x", annotation_font_color="#FBBF24", annotation_position="bottom right")
+    fig.update_layout(title=dict(text="ROAS por Canal", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#E2E8F0", zerolinecolor="#CBD5E1", title="ROAS", title_font=dict(color="#94A3B8"))
-    fig.update_xaxes(gridcolor="#E2E8F0")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535", title="ROAS", title_font=dict(color="#475569"))
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def grafico_retencion(cohorte_rows):
@@ -593,19 +569,19 @@ def grafico_retencion(cohorte_rows):
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["clientes"], mode="lines+markers", name="Clientes Activos",
-        line=dict(color="#0EA5E9", width=2), marker=dict(size=5),
-        fill="tozeroy", fillcolor="rgba(14,165,233,0.08)",
+        line=dict(color="#38BDF8", width=2), marker=dict(size=5),
+        fill="tozeroy", fillcolor="rgba(56,189,248,0.08)",
     ))
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["ltv_acum"], mode="lines+markers", name="LTV Acumulado / Cliente",
-        line=dict(color="#16A34A", width=2, dash="dot"), marker=dict(size=5),
+        line=dict(color="#34D399", width=2, dash="dot"), marker=dict(size=5),
         yaxis="y2",
     ))
     fig.update_layout(
-        title=dict(text="Cohorte: Retención de Clientes & LTV Acumulado (12 meses)", font=dict(size=13, color="#1E293B")),
-        legend=dict(font=dict(color="#64748B"), bgcolor="#FFFFFF"),
-        yaxis=dict(title="Clientes activos", gridcolor="#E2E8F0", color="#64748B"),
-        yaxis2=dict(title="LTV acum. (CLP)", overlaying="y", side="right", color="#16A34A", gridcolor="rgba(0,0,0,0)"),
+        title=dict(text="Cohorte: Retención de Clientes & LTV Acumulado (12 meses)", font=dict(size=13, color="#CBD5E1")),
+        legend=dict(font=dict(color="#94A3B8"), bgcolor="#0D1420"),
+        yaxis=dict(title="Clientes activos", gridcolor="#1A2535", color="#94A3B8"),
+        yaxis2=dict(title="LTV acum. (CLP)", overlaying="y", side="right", color="#34D399", gridcolor="rgba(0,0,0,0)"),
         **THEME,
     )
     return fig
@@ -619,15 +595,15 @@ def grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, activos):
     fig = go.Figure(go.Waterfall(
         orientation="v", measure=["absolute","relative","relative","relative"],
         x=labels, y=vals,
-        connector=dict(line=dict(color="#CBD5E1", width=1)),
-        decreasing=dict(marker_color="#DC2626"),
-        totals=dict(marker_color="#0EA5E9"),
+        connector=dict(line=dict(color="#1A2535", width=1)),
+        decreasing=dict(marker_color="#F87171"),
+        totals=dict(marker_color="#38BDF8"),
         text=[fmt_clp(v) for v in vals], textposition="outside",
-        textfont=dict(color="#475569", size=10),
+        textfont=dict(color="#CBD5E1", size=10),
     ))
-    fig.update_layout(title=dict(text="Impacto Cyber sobre Ingresos Base", font=dict(size=13, color="#1E293B")),
+    fig.update_layout(title=dict(text="Impacto Cyber sobre Ingresos Base", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#E2E8F0", zerolinecolor="#CBD5E1")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
     return fig
 
 def grafico_equilibrio(pl):
@@ -654,7 +630,7 @@ with st.sidebar:
         Simulador P&L · v2.0
       </div>
     </div>
-    <hr style="border:none;border-top:1px solid #1E2D3D;margin:0.5rem 0 0.3rem 0;"/>
+    <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
     """, unsafe_allow_html=True)
 
     modo = st.radio("Modo de uso", ["Gerente Ecommerce", "Dueño PyME"],
@@ -746,8 +722,8 @@ with st.sidebar:
         cyber_c_on = st.checkbox("C: Inflación CAC +50%",           value=True)
 
     st.markdown("""
-    <hr style="border:none;border-top:1px solid #1E2D3D;margin:1.2rem 0 0.8rem 0;"/>
-    <div style="font-size:0.62rem;color:#475569;text-align:center;line-height:1.6;">
+    <hr style="border:none;border-top:1px solid #1A2535;margin:1.2rem 0 0.8rem 0;"/>
+    <div style="font-size:0.62rem;color:#2D3748;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
       <a href="https://www.aovalle.com" style="color:#38BDF8;text-decoration:none;">aovalle.com</a>
     </div>
@@ -809,11 +785,11 @@ pct_pe, pct_act, color_eq = grafico_equilibrio(pl)
 
 # ── HEADER ──
 badge_html = (
-    '<span style="background:#052E16;color:#4ADE80;border:1px solid #166534;'
+    '<span style="background:#1A2E0F;color:#86EFAC;border:1px solid #2D4A1E;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
-    '<span style="background:#E0F2FE;color:#0284C7;border:1px solid #BA1E3A5F;'
+    '<span style="background:#0C2340;color:#38BDF8;border:1px solid #1E3A5F;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">💼 Modo Gerente</span>'
 )
@@ -827,7 +803,7 @@ st.markdown(f"""
     <h1 style="font-size:1.85rem;margin:0;">{titulo}</h1>
     {badge_html}
   </div>
-  <p style="color:#64748B;font-size:0.85rem;margin:0.4rem 0 0 0;">{subtitulo}</p>
+  <p style="color:#475569;font-size:0.85rem;margin:0.4rem 0 0 0;">{subtitulo}</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -926,9 +902,9 @@ with tab_pl:
     signo      = "por encima" if dist_pe >= 0 else "por debajo"
 
     st.markdown(f"""
-    <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:1rem;">
+    <div style="background:#0D1420;border:1px solid #1A2535;border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:1rem;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0.6rem;">
-        <span style="font-size:0.72rem;color:#94A3B8;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">
+        <span style="font-size:0.72rem;color:#475569;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">
           Ingresos actuales vs. punto de equilibrio
         </span>
         <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:{color_text};">
@@ -1019,9 +995,9 @@ with tab_pl:
         if diag.get("cta"):
             st.markdown(
                 '<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;'
-                'background:#F8FAFC;border:1px solid #E2E8F0;border-top:none;border-radius:0 0 8px 8px;">'
+                'background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;">'
                 '<a href="https://www.aovalle.com" target="_blank" '
-                'style="color:#0284C7;font-size:0.78rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;">'
+                'style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;">'
                 '→ Solicitar diagnóstico personalizado · aovalle.com ↗</a></div>',
                 unsafe_allow_html=True,
             )
@@ -1161,7 +1137,7 @@ with tab_retencion:
             f"Ofrece un descuento para la segunda compra. Es la acción de mayor impacto con menor costo."
         )
         st.markdown(f'<div class="diag-box"><div class="diag-title">🔴 CHURN ELEVADO — Base de Clientes en Erosión</div><div class="diag-body">{msg_churn}</div></div>', unsafe_allow_html=True)
-        st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#F8FAFC;border:1px solid #E2E8F0;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#0284C7;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Diagnóstico de retención · aovalle.com ↗</a></div>', unsafe_allow_html=True)
+        st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Diagnóstico de retención · aovalle.com ↗</a></div>', unsafe_allow_html=True)
     elif retencion_12m >= 0.40:
         st.markdown(f'<div class="diag-box ok"><div class="diag-title">✅ RETENCIÓN SALUDABLE</div><div class="diag-body">Tu tasa de retención a 12 meses es <strong>{retencion_12m*100:.0f}%</strong>. Esto es superior al benchmark promedio de ecommerce en Chile (~25-35%). El foco ahora debe ser incrementar la frecuencia de recompra para elevar el LTV por cohorte.</div></div>', unsafe_allow_html=True)
 
@@ -1174,12 +1150,12 @@ with tab_cyber:
 
     if not activar_cyber:
         st.markdown("""
-        <div style="text-align:center;padding:3rem 1rem;background:#FFFFFF;border-radius:10px;">
+        <div style="text-align:center;padding:3rem 1rem;">
           <div style="font-size:2.5rem;margin-bottom:1rem;">⚡</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#1E293B;margin-bottom:0.5rem;">
+          <div style="font-size:1.1rem;font-weight:600;color:#CBD5E1;margin-bottom:0.5rem;">
             Módulo Cyber desactivado
           </div>
-          <div style="font-size:0.85rem;color:#64748B;max-width:420px;margin:0 auto;">
+          <div style="font-size:0.85rem;color:#475569;max-width:420px;margin:0 auto;">
             Activa "Escenarios Cyber" en el sidebar para simular el impacto de CyberDay / Black Friday
             sobre tu P&L actual.
           </div>
@@ -1232,18 +1208,18 @@ with tab_cyber:
             fig_ebitda.add_trace(go.Bar(
                 x=["EBITDA Normal", "EBITDA Post-Cyber"],
                 y=[pl["ebitda_operativo"], ebitda_post_cyber],
-                marker_color=["#16A34A" if pl["ebitda_operativo"] >= 0 else "#DC2626",
-                              "#16A34A" if ebitda_post_cyber >= 0 else "#DC2626"],
+                marker_color=["#34D399" if pl["ebitda_operativo"] >= 0 else "#F87171",
+                              "#34D399" if ebitda_post_cyber >= 0 else "#F87171"],
                 text=[fmt_clp(pl["ebitda_operativo"]), fmt_clp(ebitda_post_cyber)],
-                textposition="outside", textfont=dict(color="#1E293B", size=11),
+                textposition="outside", textfont=dict(color="#CBD5E1", size=11),
                 width=0.4,
             ))
             fig_ebitda.add_hline(y=0, line_color="#475569", line_width=1)
             fig_ebitda.update_layout(
-                title=dict(text="EBITDA: Normal vs. Post-Cyber", font=dict(size=13, color="#1E293B")),
+                title=dict(text="EBITDA: Normal vs. Post-Cyber", font=dict(size=13, color="#CBD5E1")),
                 showlegend=False, **THEME,
             )
-            fig_ebitda.update_yaxes(gridcolor="#E2E8F0", zerolinecolor="#CBD5E1")
+            fig_ebitda.update_yaxes(gridcolor="#1A2535", zerolinecolor="#475569")
             st.plotly_chart(fig_ebitda, use_container_width=True)
 
         # Diagnósticos Cyber
@@ -1264,7 +1240,7 @@ with tab_cyber:
               </div>
             </div>
             """, unsafe_allow_html=True)
-            st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#F8FAFC;border:1px solid #E2E8F0;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#0284C7;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Preparación Cyber · aovalle.com ↗</a></div>', unsafe_allow_html=True)
+            st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Preparación Cyber · aovalle.com ↗</a></div>', unsafe_allow_html=True)
         else:
             st.markdown(f"""
             <div class="diag-box ok">
@@ -1296,22 +1272,22 @@ else:
 
 st.markdown(f"""
 <div class="footer-cta">
-  <div style="font-size:0.62rem;color:#0284C7;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.5rem;">
+  <div style="font-size:0.62rem;color:#38BDF8;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.5rem;">
     CONVIERTE ESTE DIAGNÓSTICO EN CRECIMIENTO REAL
   </div>
-  <div style="font-size:1.15rem;font-weight:700;color:#0F172A;margin-bottom:0.65rem;">
+  <div style="font-size:1.15rem;font-weight:700;color:#F1F5F9;margin-bottom:0.65rem;">
     {headline}
   </div>
-  <div style="font-size:0.85rem;color:#475569;max-width:580px;margin:0 auto 1.25rem auto;line-height:1.7;">
+  <div style="font-size:0.85rem;color:#64748B;max-width:580px;margin:0 auto 1.25rem auto;line-height:1.7;">
     {sub_copy}
   </div>
   <a href="https://www.aovalle.com" target="_blank"
-     style="display:inline-block;background:#0EA5E9;color:#FFFFFF;font-weight:700;
+     style="display:inline-block;background:#38BDF8;color:#080C14;font-weight:700;
             font-size:0.82rem;padding:0.6rem 1.75rem;border-radius:6px;text-decoration:none;
             letter-spacing:0.06em;text-transform:uppercase;">
     Solicitar Diagnóstico → aovalle.com
   </a>
-  <div style="font-size:0.62rem;color:#94A3B8;margin-top:1.25rem;">
+  <div style="font-size:0.62rem;color:#2D3748;margin-top:1.25rem;">
     RetailPulse Latam v2.0 · linkedin.com/in/ovallealejandro
   </div>
 </div>
