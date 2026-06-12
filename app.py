@@ -623,14 +623,14 @@ def grafico_equilibrio(pl):
 with st.sidebar:
     st.markdown("""
     <div style="padding:0.9rem 0 0.4rem 0;">
-      <div style="font-size:1.05rem;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">
+      <div style="font-size:1.05rem;font-weight:700;color:#F1F5F9;letter-spacing:-0.01em;">
         📊 RetailPulse Latam
       </div>
-      <div style="font-size:0.65rem;color:#0284C7;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
+      <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
         Simulador P&L · v2.0
       </div>
     </div>
-    <hr style="border:none;border-top:1px solid #E2E8F0;margin:0.5rem 0 0.3rem 0;"/>
+    <hr style="border:none;border-top:1px solid #1E2D3D;margin:0.5rem 0 0.3rem 0;"/>
     """, unsafe_allow_html=True)
 
     modo = st.radio("Modo de uso", ["Gerente Ecommerce", "Dueño PyME"],
@@ -722,10 +722,10 @@ with st.sidebar:
         cyber_c_on = st.checkbox("C: Inflación CAC +50%",           value=True)
 
     st.markdown("""
-    <hr style="border:none;border-top:1px solid #E2E8F0;margin:1.2rem 0 0.8rem 0;"/>
-    <div style="font-size:0.62rem;color:#94A3B8;text-align:center;line-height:1.6;">
+    <hr style="border:none;border-top:1px solid #1E2D3D;margin:1.2rem 0 0.8rem 0;"/>
+    <div style="font-size:0.62rem;color:#475569;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
-      <a href="https://www.aovalle.com" style="color:#0284C7;text-decoration:none;">aovalle.com</a>
+      <a href="https://www.aovalle.com" style="color:#38BDF8;text-decoration:none;">aovalle.com</a>
     </div>
     """, unsafe_allow_html=True)
 
@@ -785,7 +785,7 @@ pct_pe, pct_act, color_eq = grafico_equilibrio(pl)
 
 # ── HEADER ──
 badge_html = (
-    '<span style="background:#DCFCE7;color:#16A34A;border:1px solid #86EFAC;'
+    '<span style="background:#052E16;color:#4ADE80;border:1px solid #166534;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
