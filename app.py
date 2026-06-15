@@ -1,7 +1,7 @@
 """
 RetailPulse Latam — Simulador P&L Ecommerce
 Autor: Desarrollado para Alejandro Ovalle | aovalle.com
-Versión: 2.0
+Versión: 2.0 Beta
 Stack: Python + Streamlit + Plotly
 Deploy: Streamlit Community Cloud (tier gratuito)
 
@@ -30,7 +30,7 @@ APP_PASSWORD = "retailpulse2025"   # ← CAMBIA ESTE VALOR
 # ─────────────────────────────────────────────────────────────────────────────
 
 st.set_page_config(
-    page_title="RetailPulse Latam | Simulador P&L Ecommerce",
+    page_title="RetailPulse Latam | Simulador P&L Ecommerce | AOvalle.com",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -82,7 +82,7 @@ def pantalla_login():
           </div>
           <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
-            Simulador P&L · v2.0
+            Simulador P&L · v2.0 · Beta
           </div>
         </div>
         """, unsafe_allow_html=True)
