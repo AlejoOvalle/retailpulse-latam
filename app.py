@@ -80,7 +80,7 @@ def pantalla_login():
           </div>
           <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
-            | Simulador P&L Ecommerce | Beta
+            Simulador P&L Ecommerce | Beta
           </div>
         </div>
         """, unsafe_allow_html=True)
