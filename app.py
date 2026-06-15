@@ -23,7 +23,7 @@ import numpy as np
 # ─────────────────────────────────────────────────────────────────────────────
 # 🔐 ACCESO — Edita el password aquí
 # ─────────────────────────────────────────────────────────────────────────────
-APP_PASSWORD = "retailpulse2026"   # ← CAMBIA ESTE VALOR
+APP_PASSWORD = "retailpulse2025"   # ← CAMBIA ESTE VALOR
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
@@ -69,18 +69,18 @@ def pantalla_login():
     </style>
     """, unsafe_allow_html=True)
 
-    col_l, col_c, col_r = st.columns([1, 1.4, 1])
+    col_l, col_c, col_r = st.columns([1, 0.9, 1])
     with col_c:
         st.markdown("""
         <div style="text-align:center; padding-top: 5vh;">
           <div style="font-size:2rem; margin-bottom:0.5rem;">⚡</div>
-          <div style="font-size:1.6rem; font-weight:700; color:#F1F5F9;
+          <div style="font-size:2.2rem; font-weight:700; color:#F1F5F9;
                       letter-spacing:-0.02em; margin-bottom:0.2rem;">
             RetailPulse Latam
           </div>
           <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
-            Simulador P&L Ecommerce | Beta
+            Simulador P&L · v2.0
           </div>
         </div>
         """, unsafe_allow_html=True)
@@ -100,6 +100,7 @@ def pantalla_login():
                 placeholder="Ingresa el password...",
                 label_visibility="collapsed",
             )
+            st.markdown('<div style="height:1rem;"></div>', unsafe_allow_html=True)
             ingresar = st.button("Ingresar →", use_container_width=True, type="primary")
 
             st.markdown("</div>", unsafe_allow_html=True)
@@ -788,7 +789,7 @@ with st.sidebar:
         📊 RetailPulse Latam
       </div>
       <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
-        Simulador P&L · v2.0 | Beta
+        Simulador P&L · v2.0
       </div>
     </div>
     <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
