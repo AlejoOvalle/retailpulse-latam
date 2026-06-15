@@ -788,7 +788,7 @@ with st.sidebar:
         📊 RetailPulse Latam
       </div>
       <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
-        Simulador P&L · v2.0
+        Simulador P&L · v2.0 | Beta
       </div>
     </div>
     <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
