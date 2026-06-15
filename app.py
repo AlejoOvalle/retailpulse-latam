@@ -144,7 +144,7 @@ st.markdown("""
 
   html, body, [class*="css"] { font-family: 'Roboto', sans-serif; }
 
-  .stApp { background: #333333; color: #E8EDF5; }
+  .stApp { background: #080C14; color: #E8EDF5; }
 
   /* ── SIDEBAR ── */
   [data-testid="stSidebar"] {
@@ -380,7 +380,7 @@ def mc(label, value, sub=None, delta=None, kind="default", sm=False):
     </div>"""
 
 THEME = dict(
-    paper_bgcolor="#333333", plot_bgcolor="#333333",
+    paper_bgcolor="#080C14", plot_bgcolor="#080C14",
     font=dict(family="DM Sans", color="#94A3B8", size=11),
     margin=dict(l=16, r=16, t=36, b=16),
 )
