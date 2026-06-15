@@ -295,54 +295,104 @@ CANALES_DEF = {
     "Directo/Otros":  {"color": "#C084FC", "dot": "#C084FC"},
 }
 
-def calcular_canal(trafico, cr, aov, cpc, margen_pct):
-    """P&L completo de un canal individual."""
-    pedidos    = trafico * cr
-    ingresos   = pedidos * aov
-    cogs       = ingresos * (1 - margen_pct)
+# Comisiones reales por marketplace chileno (rango típico, usamos punto medio)
+MARKETPLACE_COMISIONES = {
+    "Mercado Libre":    {"min": 13.0, "max": 17.0, "default": 15.0},
+    "Falabella.com":    {"min": 15.0, "max": 20.0, "default": 17.5},
+    "Lider (Walmart)":  {"min": 12.0, "max": 18.0, "default": 15.0},
+    "Ripley":           {"min": 15.0, "max": 20.0, "default": 17.0},
+    "Paris":            {"min": 15.0, "max": 18.0, "default": 16.5},
+    "Personalizado":    {"min":  0.0, "max": 40.0, "default": 15.0},
+}
+
+def calcular_canal(trafico, cr, aov, cpc, margen_pct,
+                   es_marketplace=False, comision_pct=0.0, nombre_mp=None):
+    """
+    P&L completo de un canal individual.
+
+    Para Marketplace:
+      - cpc se ignora (no hay pauta directa)
+      - comision_pct = % que cobra el marketplace sobre ingresos brutos
+      - gasto_ads    = comision_pagada (para mantener la estructura del P&L)
+      - cac          = comision_pagada / pedidos
+      - roas         = ingresos_brutos / comision_pagada
+    """
+    pedidos      = trafico * cr
+    ingresos     = pedidos * aov
+    cogs         = ingresos * (1 - margen_pct)
     margen_bruto = ingresos * margen_pct
-    gasto_ads  = trafico * cpc
-    contribucion = margen_bruto - gasto_ads
-    roas       = ingresos / gasto_ads if gasto_ads > 0 else 0
-    cac        = gasto_ads / pedidos  if pedidos  > 0 else 0
+
+    if es_marketplace:
+        comision_pagada = ingresos * comision_pct
+        ingresos_netos  = ingresos - comision_pagada
+        gasto_ads       = comision_pagada          # alias para mantener estructura P&L
+        contribucion    = ingresos_netos * margen_pct - comision_pagada
+        contribucion    = margen_bruto - comision_pagada
+        roas            = ingresos / comision_pagada if comision_pagada > 0 else 0
+        cac             = comision_pagada / pedidos  if pedidos > 0 else 0
+    else:
+        comision_pagada = 0.0
+        ingresos_netos  = ingresos
+        gasto_ads       = trafico * cpc
+        contribucion    = margen_bruto - gasto_ads
+        roas            = ingresos / gasto_ads if gasto_ads > 0 else 0
+        cac             = gasto_ads / pedidos  if pedidos  > 0 else 0
+
     return dict(
         trafico=trafico, cr=cr, aov=aov, cpc=cpc,
-        pedidos=pedidos, ingresos=ingresos, cogs=cogs,
-        margen_bruto=margen_bruto, gasto_ads=gasto_ads,
+        pedidos=pedidos, ingresos=ingresos, ingresos_netos=ingresos_netos,
+        cogs=cogs, margen_bruto=margen_bruto,
+        gasto_ads=gasto_ads, comision_pagada=comision_pagada,
         contribucion=contribucion, roas=roas, cac=cac,
+        es_marketplace=es_marketplace, comision_pct=comision_pct,
+        nombre_mp=nombre_mp,
     )
 
 def calcular_pl_global(canales_data, costos_fijos, costo_logistica_unitario, tasa_devolucion):
     """Consolida el P&L completo desde los canales."""
-    total_ingresos     = sum(c["ingresos"]     for c in canales_data.values())
-    total_pedidos      = sum(c["pedidos"]      for c in canales_data.values())
-    total_margen_bruto = sum(c["margen_bruto"] for c in canales_data.values())
-    total_gasto_ads    = sum(c["gasto_ads"]    for c in canales_data.values())
+    total_ingresos          = sum(c["ingresos"]         for c in canales_data.values())
+    total_pedidos           = sum(c["pedidos"]           for c in canales_data.values())
+    total_margen_bruto      = sum(c["margen_bruto"]      for c in canales_data.values())
+    total_gasto_ads         = sum(c["gasto_ads"]         for c in canales_data.values()
+                                  if not c.get("es_marketplace"))
+    total_comisiones_mp     = sum(c["comision_pagada"]   for c in canales_data.values()
+                                  if c.get("es_marketplace"))
 
     costo_logistica    = total_pedidos * costo_logistica_unitario
     devoluciones_netas = total_pedidos * tasa_devolucion * (
         total_ingresos / total_pedidos if total_pedidos > 0 else 0
     )
-    ebitda_operativo   = total_margen_bruto - total_gasto_ads - costo_logistica - costos_fijos - devoluciones_netas
+    # EBITDA separa ads y comisiones para transparencia en el P&L
+    ebitda_operativo   = (total_margen_bruto
+                          - total_gasto_ads
+                          - total_comisiones_mp
+                          - costo_logistica
+                          - costos_fijos
+                          - devoluciones_netas)
 
-    margen_contribucion = total_margen_bruto - total_gasto_ads
+    total_costo_adquisicion = total_gasto_ads + total_comisiones_mp
+    margen_contribucion = total_margen_bruto - total_costo_adquisicion
     punto_equilibrio_pedidos = (
         (costos_fijos + costo_logistica + devoluciones_netas) /
-        ((total_ingresos - total_gasto_ads) / total_pedidos)
-        if total_pedidos > 0 and total_ingresos > total_gasto_ads else 0
+        ((total_ingresos - total_costo_adquisicion) / total_pedidos)
+        if total_pedidos > 0 and total_ingresos > total_costo_adquisicion else 0
     )
-    punto_equilibrio_ingresos = punto_equilibrio_pedidos * (total_ingresos / total_pedidos if total_pedidos > 0 else 0)
+    punto_equilibrio_ingresos = punto_equilibrio_pedidos * (
+        total_ingresos / total_pedidos if total_pedidos > 0 else 0
+    )
 
-    ltv_promedio       = (total_ingresos / total_pedidos if total_pedidos > 0 else 0) * 2.4
-    cac_promedio       = total_gasto_ads / total_pedidos if total_pedidos > 0 else 0
-    ltv_cac            = ltv_promedio / cac_promedio if cac_promedio > 0 else 0
-    roas_global        = total_ingresos / total_gasto_ads if total_gasto_ads > 0 else 0
+    ltv_promedio = (total_ingresos / total_pedidos if total_pedidos > 0 else 0) * 2.4
+    cac_promedio = total_costo_adquisicion / total_pedidos if total_pedidos > 0 else 0
+    ltv_cac      = ltv_promedio / cac_promedio if cac_promedio > 0 else 0
+    roas_global  = total_ingresos / total_costo_adquisicion if total_costo_adquisicion > 0 else 0
 
     return dict(
         total_ingresos=total_ingresos,
         total_pedidos=total_pedidos,
         total_margen_bruto=total_margen_bruto,
         total_gasto_ads=total_gasto_ads,
+        total_comisiones_mp=total_comisiones_mp,
+        total_costo_adquisicion=total_costo_adquisicion,
         costo_logistica=costo_logistica,
         devoluciones_netas=devoluciones_netas,
         costos_fijos=costos_fijos,
@@ -421,7 +471,7 @@ def diagnosticos_pl(pl, canales_data, modo):
             diags.append(dict(nivel="danger", titulo="🔴 EBITDA OPERATIVO NEGATIVO",
                 cuerpo=(f"El resultado operativo es <strong>{fmt_clp(pl['ebitda_operativo'])}</strong>. "
                         f"La operación está destruyendo valor. La suma de costos fijos ({fmt_clp(pl['costos_fijos'])}), "
-                        f"logística ({fmt_clp(pl['costo_logistica'])}) y gasto de adquisición ({fmt_clp(pl['total_gasto_ads'])}) "
+                        f"logística ({fmt_clp(pl['costo_logistica'])}) y costo de adquisición ({fmt_clp(pl['total_costo_adquisicion'])}) "
                         f"supera el margen bruto generado.<br><br>"
                         f"<strong>Lever inmediato:</strong> Auditar el mix de canales. "
                         f"Identificar cuál canal tiene contribución negativa y pausarlo es más urgente que optimizar campañas."), cta=True))
@@ -488,20 +538,31 @@ def diagnosticos_pl(pl, canales_data, modo):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def grafico_pl_waterfall(pl):
-    labels = ["Ingresos Brutos", "COGS", "Gasto Ads", "Logística", "Devoluciones", "Costos Fijos", "EBITDA"]
+    # Construir dinámicamente según si hay comisiones marketplace
+    tiene_mp = pl.get("total_comisiones_mp", 0) > 0
+    labels = ["Ingresos Brutos", "COGS", "Gasto Ads"]
     vals   = [
         pl["total_ingresos"],
         -(pl["total_ingresos"] - pl["total_margen_bruto"]),
         -pl["total_gasto_ads"],
+    ]
+    if tiene_mp:
+        labels.append("Comisiones MP")
+        vals.append(-pl["total_comisiones_mp"])
+    labels += ["Logística", "Devoluciones", "Costos Fijos", "EBITDA"]
+    vals   += [
         -pl["costo_logistica"],
         -pl["devoluciones_netas"],
         -pl["costos_fijos"],
     ]
     ebitda = pl["ebitda_operativo"]
-    measure = ["absolute","relative","relative","relative","relative","relative","total"]
+    measure = ["absolute"] + ["relative"] * (len(labels) - 2) + ["total"]
     vals.append(ebitda)
-    colors_bar = ["#38BDF8","#F87171","#F87171","#FBBF24","#FBBF24","#FB923C",
-                  "#34D399" if ebitda >= 0 else "#F87171"]
+    base_colors = ["#38BDF8","#F87171","#F87171"]
+    if tiene_mp:
+        base_colors.append("#FBBF24")   # amarillo para comisiones MP
+    base_colors += ["#FBBF24","#FBBF24","#FB923C"]
+    colors_bar = base_colors + ["#34D399" if ebitda >= 0 else "#F87171"]
     fig = go.Figure(go.Waterfall(
         orientation="v", measure=measure, x=labels, y=vals,
         connector=dict(line=dict(color="#1A2535", width=1)),
@@ -670,13 +731,43 @@ with st.sidebar:
             activo = st.checkbox("Incluir canal", value=(nombre in ["Orgánico/SEO","Paid Ads","Email/CRM"]),
                                  key=f"act_{nombre}")
             if activo:
-                tr  = st.number_input(label_tr,  0, 500000, d["tr"],  1000, key=f"tr_{nombre}")
+                tr  = st.number_input(label_tr, 0, 500000, d["tr"], 1000, key=f"tr_{nombre}")
                 cr  = st.slider(label_cr, 0.1, 10.0, d["cr"], 0.1, key=f"cr_{nombre}",
                                 format="%.1f%%") / 100
                 aov = st.number_input(label_aov, 1000, 500000, d["aov"], 1000, key=f"aov_{nombre}")
-                cpc = st.number_input(label_cpc, 0, 5000, d["cpc"], 10, key=f"cpc_{nombre}")
-                canales_activos[nombre] = True
-                canales_input[nombre]   = dict(tr=tr, cr=cr, aov=aov, cpc=cpc)
+
+                if nombre == "Marketplace":
+                    # ── Selector de marketplace chileno ──
+                    mp_nombres = list(MARKETPLACE_COMISIONES.keys())
+                    mp_sel = st.selectbox(
+                        "Marketplace" if not es_pyme else "¿En qué tienda vendes?",
+                        mp_nombres, index=0, key="mp_selector"
+                    )
+                    mp_data   = MARKETPLACE_COMISIONES[mp_sel]
+                    mp_com_def = mp_data["default"]
+                    # Mostrar rango referencial
+                    st.markdown(
+                        f'<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
+                        f'Comisión típica: {mp_data["min"]:.0f}% – {mp_data["max"]:.0f}%</div>',
+                        unsafe_allow_html=True
+                    )
+                    comision_mp = st.slider(
+                        "Comisión del marketplace (%)" if not es_pyme else "% que cobra la plataforma",
+                        mp_data["min"], mp_data["max"], mp_com_def, 0.5,
+                        format="%.1f%%", key="mp_comision"
+                    ) / 100
+                    canales_activos[nombre] = True
+                    canales_input[nombre]   = dict(
+                        tr=tr, cr=cr, aov=aov, cpc=0,
+                        es_marketplace=True,
+                        comision_pct=comision_mp,
+                        nombre_mp=mp_sel,
+                    )
+                else:
+                    cpc = st.number_input(label_cpc, 0, 5000, d["cpc"], 10, key=f"cpc_{nombre}")
+                    canales_activos[nombre] = True
+                    canales_input[nombre]   = dict(tr=tr, cr=cr, aov=aov, cpc=cpc,
+                                                   es_marketplace=False, comision_pct=0.0, nombre_mp=None)
 
     # ── COSTOS ──
     st.markdown("### 🏗️ Estructura de Costos")
@@ -740,7 +831,12 @@ if not canales_input:
 
 # P&L por canal
 canales_data = {
-    nombre: calcular_canal(v["tr"], v["cr"], v["aov"], v["cpc"], margen_bruto_global)
+    nombre: calcular_canal(
+        v["tr"], v["cr"], v["aov"], v["cpc"], margen_bruto_global,
+        es_marketplace=v.get("es_marketplace", False),
+        comision_pct=v.get("comision_pct", 0.0),
+        nombre_mp=v.get("nombre_mp"),
+    )
     for nombre, v in canales_input.items()
 }
 
@@ -935,6 +1031,12 @@ with tab_pl:
         st.markdown("#### Estado de Resultados" if not es_pyme else "#### Resumen del Negocio")
         margen_contribucion_pct = pl["margen_contribucion"] / pl["total_ingresos"] if pl["total_ingresos"] > 0 else 0
         neg_cls = lambda v: "pnl-neg" if v < 0 else "pnl-pos" if v > 0 else ""
+        # Fila de comisiones marketplace (condicional)
+        mp_row_html = (
+            f'<tr><td class="pnl-label">Comisiones Marketplace</td>'
+            f'<td class="pnl-val pnl-neg">−{fmt_clp(pl["total_comisiones_mp"])}</td></tr>'
+        ) if pl.get("total_comisiones_mp", 0) > 0 else ""
+
         st.markdown(f"""
         <table class="pnl-table">
           <tr class="pnl-section"><td colspan="2">INGRESOS</td></tr>
@@ -950,6 +1052,7 @@ with tab_pl:
               <td class="pnl-val pnl-neg">−{fmt_clp(pl['costo_logistica'])}</td></tr>
           <tr><td class="pnl-label">Gasto en Ads</td>
               <td class="pnl-val pnl-neg">−{fmt_clp(pl['total_gasto_ads'])}</td></tr>
+          {mp_row_html}
 
           <tr class="pnl-total">
             <td class="pnl-label">Margen de Contribución</td>
@@ -1016,9 +1119,31 @@ with tab_canales:
     for nombre, canal in canales_data.items():
         color  = CANALES_DEF[nombre]["color"]
         pct    = canal["ingresos"] / max_ingresos if max_ingresos > 0 else 0
-        roas_c = canal["roas"]
-        roas_cls = "roas-ok" if roas_c >= 3 else "roas-warning" if roas_c >= 1.5 else "roas-danger"
         contrib_color = "#34D399" if canal["contribucion"] >= 0 else "#F87171"
+
+        if canal.get("es_marketplace"):
+            # Badge especial: muestra comisión en lugar de ROAS
+            mp_label   = canal.get("nombre_mp", "Marketplace")
+            com_pct    = canal.get("comision_pct", 0) * 100
+            roas_c     = canal["roas"]
+            badge_html = (
+                f'<div class="canal-roas roas-warning" style="min-width:80px;font-size:0.68rem;">' +
+                f'COM {com_pct:.1f}%</div>'
+            )
+            extra_info = (
+                f'<div style="font-family:\'DM Mono\',monospace;font-size:0.72rem;' +
+                f'color:#64748B;min-width:130px;text-align:right;">' +
+                f'{mp_label} · ROAS <span style="color:#FBBF24;">{roas_c:.1f}x</span></div>'
+            )
+        else:
+            roas_c     = canal["roas"]
+            roas_cls   = "roas-ok" if roas_c >= 3 else "roas-warning" if roas_c >= 1.5 else "roas-danger"
+            badge_html = f'<div class="canal-roas {roas_cls}">ROAS {roas_c:.1f}x</div>'
+            extra_info = (
+                f'<div style="font-family:\'DM Mono\',monospace;font-size:0.72rem;' +
+                f'color:#64748B;min-width:90px;text-align:right;">' +
+                f'Contrib: <span style="color:{contrib_color};">{fmt_clp(canal["contribucion"])}</span></div>'
+            )
 
         st.markdown(f"""
         <div class="canal-row">
@@ -1028,10 +1153,8 @@ with tab_canales:
             <div class="canal-bar-fill" style="width:{pct*100:.1f}%;background:{color};opacity:0.7;"></div>
           </div>
           <div class="canal-val">{fmt_clp(canal['ingresos'])}</div>
-          <div style="font-family:'DM Mono',monospace;font-size:0.72rem;color:#64748B;min-width:90px;text-align:right;">
-            Contrib: <span style="color:{contrib_color};">{fmt_clp(canal['contribucion'])}</span>
-          </div>
-          <div class="canal-roas {roas_cls}">ROAS {roas_c:.1f}x</div>
+          {extra_info}
+          {badge_html}
         </div>
         """, unsafe_allow_html=True)
 
@@ -1046,21 +1169,35 @@ with tab_canales:
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
     # Tabla detalle
+    hay_mp = any(c.get("es_marketplace") for c in canales_data.values())
     with st.expander("📋 Tabla detallada por canal"):
         rows_tabla = []
         for nombre, canal in canales_data.items():
-            rows_tabla.append({
+            fila = {
                 "Canal":        nombre,
                 "Tráfico":      f"{canal['trafico']:,}",
                 "CR":           fmt_pct(canal["cr"]),
                 "Pedidos":      f"{canal['pedidos']:,.0f}",
                 "AOV":          fmt_clp(canal["aov"]),
                 "Ingresos":     fmt_clp(canal["ingresos"]),
-                "Gasto Ads":    fmt_clp(canal["gasto_ads"]),
-                "ROAS":         fmt_x(canal["roas"]),
-                "CAC":          fmt_clp(canal["cac"]),
-                "Contribución": fmt_clp(canal["contribucion"]),
-            })
+            }
+            if canal.get("es_marketplace"):
+                fila["Marketplace"]      = canal.get("nombre_mp", "—")
+                fila["Comisión %"]       = fmt_pct(canal.get("comision_pct", 0))
+                fila["Comisión Pagada"]  = fmt_clp(canal.get("comision_pagada", 0))
+                fila["Ing. Netos"]       = fmt_clp(canal.get("ingresos_netos", canal["ingresos"]))
+                fila["Gasto Ads"]        = "N/A"
+            else:
+                if hay_mp:
+                    fila["Marketplace"]     = "—"
+                    fila["Comisión %"]      = "—"
+                    fila["Comisión Pagada"] = "—"
+                    fila["Ing. Netos"]      = fmt_clp(canal["ingresos"])
+                fila["Gasto Ads"] = fmt_clp(canal["gasto_ads"])
+            fila["ROAS"]         = fmt_x(canal["roas"])
+            fila["CAC"]          = fmt_clp(canal["cac"])
+            fila["Contribución"] = fmt_clp(canal["contribucion"])
+            rows_tabla.append(fila)
         st.dataframe(pd.DataFrame(rows_tabla), use_container_width=True, hide_index=True)
 
 
