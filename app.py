@@ -21,6 +21,11 @@ import pandas as pd
 import numpy as np
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 🔐 ACCESO — Edita el password aquí
+# ─────────────────────────────────────────────────────────────────────────────
+APP_PASSWORD = "retailpulse2025"   # ← CAMBIA ESTE VALOR
+
+# ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -30,6 +35,101 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 🔐 PANTALLA DE LOGIN
+# ─────────────────────────────────────────────────────────────────────────────
+
+def pantalla_login():
+    st.markdown("""
+    <style>
+      .login-wrap {
+        display: flex; flex-direction: column; align-items: center;
+        justify-content: center; min-height: 70vh; text-align: center;
+      }
+      .login-logo {
+        font-size: 2.2rem; font-weight: 700; color: #F1F5F9;
+        letter-spacing: -0.02em; margin-bottom: 0.25rem;
+      }
+      .login-sub {
+        font-size: 0.75rem; color: #38BDF8; letter-spacing: 0.15em;
+        text-transform: uppercase; margin-bottom: 2.5rem;
+      }
+      .login-box {
+        background: #0D1420; border: 1px solid #1A2535;
+        border-radius: 12px; padding: 2rem 2.5rem;
+        width: 100%; max-width: 380px;
+      }
+      .login-box label { color: #94A3B8 !important; font-size: 0.8rem !important; }
+      .login-error {
+        background: #450A0A; border: 1px solid #DC2626;
+        border-radius: 6px; padding: 0.6rem 1rem;
+        color: #F87171; font-size: 0.82rem; margin-top: 0.75rem;
+      }
+    </style>
+    """, unsafe_allow_html=True)
+
+    col_l, col_c, col_r = st.columns([1, 1.4, 1])
+    with col_c:
+        st.markdown("""
+        <div style="text-align:center; padding-top: 5vh;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">⚡</div>
+          <div style="font-size:1.6rem; font-weight:700; color:#F1F5F9;
+                      letter-spacing:-0.02em; margin-bottom:0.2rem;">
+            RetailPulse Latam
+          </div>
+          <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
+                      text-transform:uppercase; margin-bottom:2.5rem;">
+            Simulador P&L · v2.0
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        with st.container():
+            st.markdown("""
+            <div style="background:#0D1420; border:1px solid #1A2535;
+                        border-radius:12px; padding:1.75rem 2rem;">
+              <div style="font-size:0.75rem; color:#64748B; font-weight:600;
+                          letter-spacing:0.1em; text-transform:uppercase;
+                          margin-bottom:1rem;">Acceso restringido</div>
+            """, unsafe_allow_html=True)
+
+            password_input = st.text_input(
+                "Contraseña de acceso",
+                type="password",
+                placeholder="Ingresa el password...",
+                label_visibility="collapsed",
+            )
+            ingresar = st.button("Ingresar →", use_container_width=True, type="primary")
+
+            st.markdown("</div>", unsafe_allow_html=True)
+
+        if ingresar:
+            if password_input == APP_PASSWORD:
+                st.session_state["autenticado"] = True
+                st.rerun()
+            else:
+                st.markdown("""
+                <div class="login-error">
+                  🔒 Password incorrecto. Intenta nuevamente.
+                </div>
+                """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="text-align:center; margin-top:2rem;
+                    font-size:0.65rem; color:#1E2D3D;">
+          aovalle.com · Acceso exclusivo para clientes
+        </div>
+        """, unsafe_allow_html=True)
+
+
+# ── Control de acceso ──
+if "autenticado" not in st.session_state:
+    st.session_state["autenticado"] = False
+
+if not st.session_state["autenticado"]:
+    pantalla_login()
+    st.stop()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CSS
