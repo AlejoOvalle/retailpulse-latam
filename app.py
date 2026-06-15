@@ -23,14 +23,14 @@ import numpy as np
 # ─────────────────────────────────────────────────────────────────────────────
 # 🔐 ACCESO — Edita el password aquí
 # ─────────────────────────────────────────────────────────────────────────────
-APP_PASSWORD = "retailpulse2025"   # ← CAMBIA ESTE VALOR
+APP_PASSWORD = "retailpulse2026"   # ← CAMBIA ESTE VALOR
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────────────────────────────────────
 
 st.set_page_config(
-    page_title="RetailPulse Latam | Simulador P&L Ecommerce",
+    page_title="RetailPulse Latam | Simulador P&L Ecommerce | Beta",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -80,7 +80,7 @@ def pantalla_login():
           </div>
           <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
-            Simulador P&L · v2.0
+            Simulador P&L Ecommerce · v2.0 | Beta
           </div>
         </div>
         """, unsafe_allow_html=True)
