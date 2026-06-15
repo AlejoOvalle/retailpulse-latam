@@ -11,7 +11,7 @@ ARQUITECTURA v2.0
 • Full P&L por canal (Orgánico, Paid, Email, Marketplace)
 • Punto de equilibrio dinámico
 • Retención & Ciclo de Vida del Cliente (Cohort simplificado)
-• Módulo Cyber opcional (herencia v1.0)
+• Módulo Cyber Opcional (herencia v1.0)
 • Diagnósticos condicionales por área
 """
 
@@ -788,10 +788,10 @@ with st.sidebar:
     st.markdown("""
     <div style="padding:0.9rem 0 0.4rem 0;">
       <div style="font-size:1.05rem;font-weight:700;color:#F1F5F9;letter-spacing:-0.01em;">
-        📊 RetailPulse Latam
+        📊 RetailPulse Latam | AOvalle.com
       </div>
       <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
-        Simulador P&L · v2.0
+        Simulador P&L · v2.0 · Beta
       </div>
     </div>
     <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
