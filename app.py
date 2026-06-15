@@ -52,7 +52,7 @@ def pantalla_login():
         letter-spacing: -0.02em; margin-bottom: 0.25rem;
       }
       .login-sub {
-        font-size: 0.75rem; color: #38BDF8; letter-spacing: 0.15em;
+        font-size: 5rem; color: #38BDF8; letter-spacing: 0.15em;
         text-transform: uppercase; margin-bottom: 2.5rem;
       }
       .login-box {
