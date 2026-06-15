@@ -23,7 +23,7 @@ import numpy as np
 # ─────────────────────────────────────────────────────────────────────────────
 # 🔐 ACCESO — Edita el password aquí
 # ─────────────────────────────────────────────────────────────────────────────
-APP_PASSWORD = "retailpulse2025"   # ← CAMBIA ESTE VALOR
+APP_PASSWORD = "retailpulse2026"   # ← CAMBIA ESTE VALOR
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
