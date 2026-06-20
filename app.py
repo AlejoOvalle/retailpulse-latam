@@ -344,6 +344,19 @@ st.markdown("""
     background: #0D1420; border: 1px solid #1A2535;
     border-radius: 0 8px 8px 8px; padding: 1.25rem;
   }
+
+  /* ── FONDO PRINCIPAL — forzar azul oscuro en todos los contenedores ── */
+  .stApp,
+  .stAppViewContainer,
+  [data-testid="stAppViewContainer"],
+  [data-testid="stMain"],
+  [data-testid="stMainBlockContainer"],
+  .main .block-container,
+  section.main,
+  .stMainBlockContainer {
+    background-color: #080C14 !important;
+    background: #080C14 !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 
