@@ -393,7 +393,7 @@ def mc(label, value, sub=None, delta=None, kind="default", sm=False):
     </div>"""
 
 THEME = dict(
-    paper_bgcolor="#333333", plot_bgcolor="#333333",
+    paper_bgcolor="#0c1320", plot_bgcolor="#0c1320",
     font=dict(family="DM Sans", color="#94A3B8", size=11),
     margin=dict(l=16, r=16, t=36, b=16),
 )
