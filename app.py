@@ -78,11 +78,11 @@ def pantalla_login():
                alt="aovalle.com logo" />
           <div style="font-size:2.2rem; font-weight:700; color:#F1F5F9;
                       letter-spacing:-0.02em; margin-bottom:0.2rem;">
-            RetailPulse Latam
+            RetailPulse Latam | Chile
           </div>
           <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
-            Simulador P&L · v2.0
+            Simulador P&L · Ecommerce · v2.0 Beta
           </div>
         </div>
         """, unsafe_allow_html=True)
@@ -852,10 +852,10 @@ with st.sidebar:
                style="height:56px; width:auto; margin-bottom:1.25rem; border-radius:10px;"
                alt="aovalle.com logo" />
       <div style="font-size:1.05rem;font-weight:700;color:#F1F5F9;letter-spacing:-0.01em;">
-        📊 RetailPulse Latam - AOvalle.com
+        📊 RetailPulse Latam | Chile
       </div>
       <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
-        Simulador P&L · v2.0
+        Simulador P&L · Ecommerce · v2.0 Beta
       </div>
     </div>
     <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
@@ -1659,3 +1659,44 @@ st.markdown(f"""
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TÉRMINOS Y CONDICIONES
+# ─────────────────────────────────────────────────────────────────────────────
+
+st.markdown("<div style='height:1rem;'></div>", unsafe_allow_html=True)
+
+col_tc_l, col_tc_c, col_tc_r = st.columns([1, 1, 1])
+with col_tc_c:
+    with st.popover("📄 Ver Términos y Condiciones"):
+
+        st.caption("Última actualización: Junio de 2026")
+        st.markdown("#### Términos y Condiciones de Uso | RetailPulse LATAM")
+
+        secciones = [
+            ("1. Objeto de la Aplicación y Licencia de Uso",
+             "RetailPulse LATAM es un simulador interactivo de Estado de Resultados (P&L) enfocado en comercio electrónico para el mercado latinoamericano. El Propietario otorga al Usuario una licencia de uso limitada, no exclusiva, revocable, personal y no transferible para utilizar La Aplicación como herramienta de análisis, diagnóstico y simulación estratégica según el plan de licenciamiento contratado."),
+
+            ("2. Privacidad por Diseño y No Almacenamiento (Cumplimiento Ley N° 21.719)",
+             "En estricto cumplimiento del principio de minimización y privacidad por diseño consagrados en la Ley N° 21.719, La Aplicación adopta un modelo de procesamiento en tiempo de ejecución. Esto significa que El Propietario no realiza operaciones de recolección, registro, almacenamiento ni tratamiento de los datos financieros introducidos. Toda la información se procesa localmente en la sesión efímera del navegador del Usuario y se destruye automáticamente al cerrarse la sesión, garantizando la imposibilidad de accesos no autorizados o fugas de información."),
+
+            ("3. Exclusión de Responsabilidad Financiera y Comercial",
+             "RetailPulse LATAM es exclusivamente una herramienta de simulación, apoyo educativo y planificación estratégica. Los resultados, gráficos, proyecciones y cálculos generados son estimaciones matemáticas basadas en los datos suministrados por el propio Usuario. El uso de La Aplicación no constituye asesoría financiera, contable, legal, tributaria o comercial vinculante. El Propietario no será responsable por pérdidas financieras, lucro cesante, daño emergente o decisiones operativas erróneas derivadas del uso de la información visualizada."),
+
+            ("4. Propiedad Intelectual y Restricciones",
+             "Toda la propiedad intelectual asociada a RetailPulse LATAM —incluyendo código fuente (Python), arquitectura de software, algoritmos de simulación financiera, lógica de módulos, diseños e interfaces— es propiedad exclusiva de Alejandro Ovalle. Queda prohibido realizar ingeniería inversa, descompilar, extraer el código fuente, revender el acceso a terceros sin licencia corporativa, o remover los avisos de derecho de autor."),
+
+            ("5. Modificaciones y Actualizaciones de Datos",
+             "Las tarifas de pasarelas de pago, comisiones de marketplaces y multiplicadores de eventos incluidos corresponden a revisiones periódicas del mercado realizadas por El Propietario. El Propietario se reserva el derecho de actualizar o modificar la matriz de datos en cualquier momento para asegurar la vigencia de las simulaciones."),
+
+            ("6. Ley Aplicable y Jurisdicción",
+             "Estos Términos y Condiciones se rigen por las leyes de la República de Chile. Cualquier controversia será sometida a la jurisdicción de los Tribunales Ordinarios de Justicia de Santiago de Chile."),
+        ]
+
+        for titulo, cuerpo in secciones:
+            st.markdown(f"**{titulo}**")
+            st.markdown(cuerpo)
+            st.divider()
+
+        st.caption("© 2026 Alejandro Ovalle · aovalle.com · Todos los derechos reservados")
