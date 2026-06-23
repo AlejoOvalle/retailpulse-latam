@@ -969,10 +969,16 @@ with st.sidebar:
                         )
                     canales_activos[nombre] = True
                     canales_input[nombre]   = dict(
-                        tr=tr, cr=cr, aov=aov, cpc=cpc,
-                        inversion=inversion,
-                        es_marketplace=False, comision_pct=0.0, nombre_mp=None
+                        tr=tr, cr=cr, aov=aov, cpc=0,
+                        es_marketplace=True,
+                        comision_pct=comision_mp,
+                        nombre_mp=mp_sel,
                     )
+                else:
+                    cpc = st.number_input(label_cpc, 0.0, 500.0, float(d["cpc"]), 0.1, key=f"cpc_{nombre}", format="%.1f")
+                    canales_activos[nombre] = True
+                    canales_input[nombre]   = dict(tr=tr, cr=cr, aov=aov, cpc=cpc,
+                                                   es_marketplace=False, comision_pct=0.0, nombre_mp=None)
 
     # ── COSTOS ──
     st.markdown("### 🏗️ Estructura de Costos")
