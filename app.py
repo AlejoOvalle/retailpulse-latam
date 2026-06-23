@@ -450,16 +450,21 @@ PASARELAS_CL = {
 }
 
 def calcular_canal(trafico, cr, aov, cpc, margen_pct,
-                   es_marketplace=False, comision_pct=0.0, nombre_mp=None):
+                   es_marketplace=False, comision_pct=0.0, nombre_mp=None,
+                   inversion=0):
     """
     P&L completo de un canal individual.
 
-    Para Marketplace:
-      - cpc se ignora (no hay pauta directa)
-      - comision_pct = % que cobra el marketplace sobre ingresos brutos
-      - gasto_ads    = comision_pagada (para mantener la estructura del P&L)
-      - cac          = comision_pagada / pedidos
-      - roas         = ingresos_brutos / comision_pagada
+    Lógica de costo de adquisición por tipo de canal:
+    ─────────────────────────────────────────────────
+    • Paid Ads:           gasto = trafico × cpc  (costo variable por clic)
+    • Orgánico/SEO,
+      Email/CRM,
+      Directo/Otros:      gasto = inversion      (costo fijo mensual: agencia, plataforma)
+    • Marketplace:        gasto = comision_pct × ingresos (% sobre venta)
+
+    Esta distinción elimina el sesgo de aplicar CPC a canales sin costo por clic,
+    alineado con los estándares de P&L multicanal (Google, HubSpot, Shopify).
     """
     pedidos      = trafico * cr
     ingresos     = pedidos * aov
@@ -469,21 +474,22 @@ def calcular_canal(trafico, cr, aov, cpc, margen_pct,
     if es_marketplace:
         comision_pagada = ingresos * comision_pct
         ingresos_netos  = ingresos - comision_pagada
-        gasto_ads       = comision_pagada          # alias para mantener estructura P&L
-        contribucion    = ingresos_netos * margen_pct - comision_pagada
+        gasto_ads       = comision_pagada
         contribucion    = margen_bruto - comision_pagada
         roas            = ingresos / comision_pagada if comision_pagada > 0 else 0
         cac             = comision_pagada / pedidos  if pedidos > 0 else 0
     else:
         comision_pagada = 0.0
         ingresos_netos  = ingresos
-        gasto_ads       = trafico * cpc
+        # Paid Ads → costo variable (CPC × tráfico)
+        # Resto    → costo fijo mensual (inversión en canal)
+        gasto_ads       = (trafico * cpc) if cpc > 0 else inversion
         contribucion    = margen_bruto - gasto_ads
         roas            = ingresos / gasto_ads if gasto_ads > 0 else 0
         cac             = gasto_ads / pedidos  if pedidos  > 0 else 0
 
     return dict(
-        trafico=trafico, cr=cr, aov=aov, cpc=cpc,
+        trafico=trafico, cr=cr, aov=aov, cpc=cpc, inversion=inversion,
         pedidos=pedidos, ingresos=ingresos, ingresos_netos=ingresos_netos,
         cogs=cogs, margen_bruto=margen_bruto,
         gasto_ads=gasto_ads, comision_pagada=comision_pagada,
@@ -879,18 +885,24 @@ with st.sidebar:
     nombres_canales = list(CANALES_DEF.keys())
 
     # Valores default por canal
+    # CANALES:
+    # - Paid Ads: usa CPC (costo por clic) — gasto variable ligado al tráfico
+    # - Orgánico/SEO, Email/CRM, Directo/Otros: usa inversión mensual fija
+    #   (agencia SEO, plataforma de email, etc.) — costo fijo por canal
+    # - Marketplace: comisión % sobre venta (lógica propia)
     defaults = {
-        "Orgánico/SEO":  dict(tr=15000, cr=2.2, aov=58000, cpc=0),
-        "Paid Ads":      dict(tr=20000, cr=1.6, aov=65000, cpc=190),
-        "Email/CRM":     dict(tr=8000,  cr=3.1, aov=72000, cpc=12),
-        "Marketplace":   dict(tr=5000,  cr=4.5, aov=42000, cpc=80),
-        "Directo/Otros": dict(tr=4000,  cr=1.9, aov=55000, cpc=0),
+        "Orgánico/SEO":  dict(tr=15000, cr=2.2, aov=58000, cpc=0, inversion=350000),
+        "Paid Ads":      dict(tr=20000, cr=1.6, aov=65000, cpc=190, inversion=0),
+        "Email/CRM":     dict(tr=8000,  cr=3.1, aov=72000, cpc=0,   inversion=80000),
+        "Marketplace":   dict(tr=5000,  cr=4.5, aov=42000, cpc=0,   inversion=0),
+        "Directo/Otros": dict(tr=4000,  cr=1.9, aov=55000, cpc=0,   inversion=0),
     }
 
-    label_tr  = "Visitas/mes"    if es_pyme else "Tráfico mensual"
-    label_cr  = "% que compran"  if es_pyme else "CR (%)"
-    label_aov = "Precio promedio"if es_pyme else "AOV (CLP)"
-    label_cpc = "Costo por clic" if es_pyme else "CPC (CLP)"
+    label_tr       = "Visitas/mes"          if es_pyme else "Tráfico mensual"
+    label_cr       = "% que compran"        if es_pyme else "CR (%)"
+    label_aov      = "Precio promedio"      if es_pyme else "AOV (CLP)"
+    label_cpc      = "Costo por clic (CLP)" if es_pyme else "CPC (CLP)"
+    label_inversion= "Inversión mensual en canal (CLP)" if es_pyme else "Inversión mensual canal (CLP)"
 
     for nombre in nombres_canales:
         d = defaults[nombre]
@@ -931,10 +943,36 @@ with st.sidebar:
                         nombre_mp=mp_sel,
                     )
                 else:
-                    cpc = st.number_input(label_cpc, 0, 5000, d["cpc"], 10, key=f"cpc_{nombre}")
+                    if nombre == "Paid Ads":
+                        # Paid Ads: CPC variable ligado al volumen de tráfico
+                        cpc = st.number_input(label_cpc, 0, 5000, d["cpc"], 10, key=f"cpc_{nombre}")
+                        inversion = 0
+                        st.markdown(
+                            '<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
+                            'Costo variable · Se calcula como Tráfico × CPC</div>',
+                            unsafe_allow_html=True
+                        )
+                    else:
+                        # Orgánico/SEO, Email/CRM, Directo/Otros:
+                        # Inversión mensual fija (agencia, plataforma, retainer)
+                        # No hay costo por clic — el tráfico no tiene costo variable unitario
+                        inversion = st.number_input(
+                            label_inversion, 0, 50_000_000,
+                            d.get("inversion", 0), 50000,
+                            key=f"inv_{nombre}"
+                        )
+                        cpc = 0
+                        st.markdown(
+                            '<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
+                            'Costo fijo mensual · Incluye agencia SEO, plataforma email, etc.</div>',
+                            unsafe_allow_html=True
+                        )
                     canales_activos[nombre] = True
-                    canales_input[nombre]   = dict(tr=tr, cr=cr, aov=aov, cpc=cpc,
-                                                   es_marketplace=False, comision_pct=0.0, nombre_mp=None)
+                    canales_input[nombre]   = dict(
+                        tr=tr, cr=cr, aov=aov, cpc=cpc,
+                        inversion=inversion,
+                        es_marketplace=False, comision_pct=0.0, nombre_mp=None
+                    )
 
     # ── COSTOS ──
     st.markdown("### 🏗️ Estructura de Costos")
@@ -1027,6 +1065,7 @@ canales_data = {
         es_marketplace=v.get("es_marketplace", False),
         comision_pct=v.get("comision_pct", 0.0),
         nombre_mp=v.get("nombre_mp"),
+        inversion=v.get("inversion", 0),
     )
     for nombre, v in canales_input.items()
 }
@@ -1386,14 +1425,23 @@ with tab_canales:
                 fila["Comisión %"]       = fmt_pct(canal.get("comision_pct", 0))
                 fila["Comisión Pagada"]  = fmt_clp(canal.get("comision_pagada", 0))
                 fila["Ing. Netos"]       = fmt_clp(canal.get("ingresos_netos", canal["ingresos"]))
-                fila["Gasto Ads"]        = "N/A"
+                fila["Costo Canal"]      = "N/A"
+                fila["Tipo Costo"]       = "Comisión %"
             else:
                 if hay_mp:
                     fila["Marketplace"]     = "—"
                     fila["Comisión %"]      = "—"
                     fila["Comisión Pagada"] = "—"
                     fila["Ing. Netos"]      = fmt_clp(canal["ingresos"])
-                fila["Gasto Ads"] = fmt_clp(canal["gasto_ads"])
+                if canal.get("cpc", 0) > 0:
+                    fila["Costo Canal"] = fmt_clp(canal["gasto_ads"])
+                    fila["Tipo Costo"]  = f"CPC {fmt_clp(canal['cpc'])}/clic"
+                elif canal.get("inversion", 0) > 0:
+                    fila["Costo Canal"] = fmt_clp(canal["gasto_ads"])
+                    fila["Tipo Costo"]  = "Inversión fija"
+                else:
+                    fila["Costo Canal"] = fmt_clp(0)
+                    fila["Tipo Costo"]  = "Sin inversión"
             fila["ROAS"]         = fmt_x(canal["roas"])
             fila["CAC"]          = fmt_clp(canal["cac"])
             fila["Contribución"] = fmt_clp(canal["contribucion"])
