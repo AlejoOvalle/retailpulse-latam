@@ -1708,9 +1708,6 @@ Copyright &COPY; <script>
                   document.write(new Date().getFullYear());
                 </script> | <a>AOvalle.com</a> | Todos los Derechos Reservados
   </div>
-</div>
-""", unsafe_allow_html=True)
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TÉRMINOS Y CONDICIONES
@@ -1751,3 +1748,9 @@ with col_tc_c:
             st.divider()
 
         st.caption("© 2026 Alejandro Ovalle · aovalle.com · Todos los derechos reservados")
+  
+</div>
+""", unsafe_allow_html=True)
+
+
+
