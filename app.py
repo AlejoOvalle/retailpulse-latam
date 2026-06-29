@@ -140,7 +140,7 @@ if not st.session_state["autenticado"]:
 
 st.markdown("""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 
   html, body, [class*="css"] { font-family: 'Roboto', sans-serif; }
 
