@@ -152,7 +152,7 @@ st.markdown("""
     border-right: 1px solid #1A2535;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #38BDF8;
+    color: #BF3F57;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -166,9 +166,9 @@ st.markdown("""
   .stSlider > div > div > div > div { background: #38BDF8 !important; }
 
   /* ── HEADINGS ── */
-  h1 { color: #F1F5F9 !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
-  h2 { color: #CBD5E1 !important; font-weight: 600 !important; }
-  h3 { color: #94A3B8 !important; font-weight: 500 !important; }
+  h1 { color: #1A1A1A !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
+  h2 { color: #333333 !important; font-weight: 600 !important; }
+  h3 { color: #666666 !important; font-weight: 500 !important; }
 
   /* ── MODO BADGE ── */
   .modo-badge {
@@ -188,8 +188,8 @@ st.markdown("""
 
   /* ── METRIC CARDS ── */
   .metric-card {
-    background: #0D1420;
-    border: 1px solid #1A2535;
+    background: #FFFFFF;
+    border: 0.5px solid #E8E8E6;
     border-radius: 10px;
     padding: 1.1rem 1.3rem;
     position: relative;
@@ -203,25 +203,25 @@ st.markdown("""
     height: 2px;
     background: linear-gradient(90deg, #38BDF8, #0284C7);
   }
-  .metric-card.danger::before  { background: linear-gradient(90deg, #F87171, #DC2626); }
-  .metric-card.warning::before { background: linear-gradient(90deg, #FBBF24, #D97706); }
-  .metric-card.success::before { background: linear-gradient(90deg, #34D399, #059669); }
-  .metric-card.purple::before  { background: linear-gradient(90deg, #C084FC, #9333EA); }
+  .metric-card.danger::before  { background: linear-gradient(90deg, #BF3F57, #8C2A3B); }
+  .metric-card.warning::before { background: linear-gradient(90deg, #B05C0A, #7A3E05); }
+  .metric-card.success::before { background: linear-gradient(90deg, #2A7D4F, #1A5233); }
+  .metric-card.purple::before  { background: linear-gradient(90deg, #7C3AED, #5B21B6); }
   .metric-card .label {
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #475569; margin-bottom: 0.45rem;
+    text-transform: uppercase; color: #888888; margin-bottom: 0.45rem;
   }
   .metric-card .value {
     font-family: 'DM Mono', monospace;
-    font-size: 1.5rem; font-weight: 500; color: #F1F5F9; line-height: 1.1;
+    font-size: 1.5rem; font-weight: 500; color: #1A1A1A; line-height: 1.1;
   }
   .metric-card .value.sm { font-size: 1.15rem; }
   .metric-card .sub {
-    font-size: 0.72rem; color: #64748B; margin-top: 0.35rem; line-height: 1.4;
+    font-size: 0.72rem; color: #888888; margin-top: 0.35rem; line-height: 1.4;
   }
   .metric-card .delta { font-size: 0.72rem; margin-top: 0.3rem; }
-  .metric-card .delta.neg { color: #F87171; }
-  .metric-card .delta.pos { color: #34D399; }
+  .metric-card .delta.neg { color: #BF3F57; }
+  .metric-card .delta.pos { color: #2A7D4F; }
 
   /* ── SECTION TABS ── */
   .section-tab {
@@ -236,8 +236,8 @@ st.markdown("""
 
   /* ── CANAL ROWS ── */
   .canal-row {
-    background: #0D1420;
-    border: 1px solid #1A2535;
+    background: #FFFFFF;
+    border: 0.5px solid #E8E8E6;
     border-radius: 8px;
     padding: 0.85rem 1.1rem;
     margin-bottom: 0.4rem;
@@ -246,14 +246,14 @@ st.markdown("""
   .canal-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .canal-name { font-size: 0.8rem; font-weight: 600; color: #CBD5E1; min-width: 110px; }
+  .canal-name { font-size: 0.8rem; font-weight: 600; color: #1A1A1A; min-width: 110px; }
   .canal-bar-bg {
-    flex: 1; background: #1A2535; border-radius: 3px; height: 6px; position: relative;
+    flex: 1; background: #E8E8E6; border-radius: 3px; height: 6px; position: relative;
   }
   .canal-bar-fill {
     position: absolute; left: 0; top: 0; height: 6px; border-radius: 3px;
   }
-  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #94A3B8; min-width: 90px; text-align: right; }
+  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #888888; min-width: 90px; text-align: right; }
   .canal-roas {
     font-family: 'DM Mono', monospace; font-size: 0.75rem;
     padding: 0.15rem 0.5rem; border-radius: 4px; min-width: 52px; text-align: center;
@@ -264,10 +264,10 @@ st.markdown("""
 
   /* ── P&L TABLE ── */
   .pnl-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #1A2535; }
+  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 0.5px solid #E8E8E6; }
   .pnl-table tr:last-child td { border-bottom: none; }
-  .pnl-table .pnl-label { color: #94A3B8; }
-  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #E2E8F0; }
+  .pnl-table .pnl-label { color: #888888; }
+  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #1A1A1A; }
   .pnl-table .pnl-total td { border-top: 1px solid #38BDF8; padding-top: 0.7rem; }
   .pnl-table .pnl-total .pnl-label { color: #38BDF8; font-weight: 700; }
   .pnl-table .pnl-total .pnl-val   { color: #38BDF8; font-weight: 700; }
@@ -310,12 +310,12 @@ st.markdown("""
   }
 
   /* ── DIVIDER ── */
-  .sdiv { border: none; border-top: 1px solid #1A2535; margin: 1.75rem 0; }
+  .sdiv { border: none; border-top: 0.5px solid #E8E8E6; margin: 1.75rem 0; }
 
   /* ── FOOTER ── */
   .footer-cta {
-    background: linear-gradient(135deg, #0D1420 0%, #0C1E35 100%);
-    border: 1px solid #1A2535; border-radius: 12px;
+    background: linear-gradient(135deg, #FDF0F2 0%, #FAE0E4 100%);
+    border: 0.5px solid #E8C8CE; border-radius: 12px;
     padding: 1.75rem 2rem; text-align: center; margin-top: 2rem;
   }
 
@@ -354,8 +354,8 @@ st.markdown("""
   .main .block-container,
   section.main,
   .stMainBlockContainer {
-    background-color: #080C14 !important;
-    background: #080C14 !important;
+    background-color: #F5F5F3 !important;
+    background: #F5F5F3 !important;
   }
 </style>
 """, unsafe_allow_html=True)
@@ -366,13 +366,26 @@ st.markdown("""
 # ─────────────────────────────────────────────────────────────────────────────
 
 def fmt_clp(v, decimals=1):
-    if abs(v) >= 1_000_000_000:
-        return f"${v/1_000_000_000:,.{decimals}f}B"
-    if abs(v) >= 1_000_000:
-        return f"${v/1_000_000:,.{decimals}f}M"
-    if abs(v) >= 1_000:
-        return f"${v/1_000:,.0f}K"
-    return f"${v:,.0f}"
+    """
+    Formato moneda CLP sin escala B (billones).
+    Sobre $1.000M: sin decimales. Bajo $1.000M: con decimales según parámetro.
+    Usa punto como separador de miles y coma como decimal (estándar Chile).
+    Ej: $1.377.660.000 → $1.378M  |  $57.800.000 → $57,8M  |  $350.000 → $350K
+    """
+    sign = "-" if v < 0 else ""
+    av   = abs(v)
+    if av >= 1_000_000:
+        d   = 0 if av >= 1_000_000_000 else decimals
+        val = av / 1_000_000
+        fmt = "{:,.{}f}".format(val, d)
+        s   = fmt.replace(",", "X").replace(".", ",").replace("X", ".")
+        return "{}${}M".format(sign, s)
+    if av >= 1_000:
+        fmt = "{:,.0f}".format(av / 1_000)
+        s   = fmt.replace(",", ".")
+        return "{}${}K".format(sign, s)
+    return "${}".format("{:,.0f}".format(av))
+
 
 def fmt_pct(v, d=1): return f"{v*100:.{d}f}%"
 def fmt_x(v, d=2):   return f"{v:.{d}f}x"
@@ -1045,7 +1058,7 @@ with st.sidebar:
     <hr style="border:none;border-top:1px solid #1A2535;margin:1.2rem 0 0.8rem 0;"/>
     <div style="font-size:0.62rem;color:#2D3748;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
-      <a href="https://www.aovalle.com" style="color:#38BDF8;text-decoration:none;">aovalle.com</a>
+      <a href="https://www.aovalle.com" style="color:#BF3F57;text-decoration:none;">aovalle.com</a>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1124,13 +1137,13 @@ badge_html = (
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
-    '<span style="background:#0C2340;color:#38BDF8;border:1px solid #1E3A5F;'
+    '<span style="background:#FDF0F2;color:#8C2A3B;border:0.5px solid #E8C8CE;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">💼 Modo Gerente</span>'
 )
 
 titulo = "Simulador P&L de tu Tienda Online" if es_pyme else "Simulador Full P&L Ecommerce"
-subtitulo = "Visualiza cuánto gana tu negocio, dónde se va el dinero y cuándo empiezas a ser rentable." if es_pyme else "P&L multicanal · Punto de equilibrio · Retención · Ciclo de vida · Módulo Cyber · Mercado Chileno · CLP"
+subtitulo = "Visualiza cuánto gana tu negocio, dónde se va el dinero y cuándo empiezas a ser rentable." if es_pyme else "P&L multicanal · Punto de equilibrio · Retención · Ciclo de vida · Módulo Cyber · Ley 21.719 · Mercado Chileno · CLP"
 
 st.markdown(f"""
 <div style="margin-bottom:1.75rem;">
@@ -1146,11 +1159,12 @@ st.markdown(f"""
 # TABS PRINCIPALES
 # ══════════════════════════════════════════════════════════════════════════════
 
-tab_pl, tab_canales, tab_retencion, tab_cyber = st.tabs([
+tab_pl, tab_canales, tab_retencion, tab_cyber, tab_ley = st.tabs([
     "📋 P&L Global",
     "📡 Canales",
     "🔁 Retención & LTV",
     "⚡ Módulo Cyber",
+    "🔒 Ley 21.719",
 ])
 
 
@@ -1554,9 +1568,9 @@ with tab_cyber:
                     padding:0.75rem 1.25rem;margin-bottom:1rem;
                     display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
           <div>
-            <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
+            <span style="font-size:0.62rem;color:#888888;text-transform:uppercase;
                          letter-spacing:0.1em;">Evento</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#38BDF8;">
+            <span style="font-size:0.9rem;font-weight:600;color:#BF3F57;">
               {evento_cyber_sel}</span>
             <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · Tráfico ×{ev_activo.get('multiplicador',4)} · {ev_activo.get('mes','—')}</span>
@@ -1564,7 +1578,7 @@ with tab_cyber:
           <div>
             <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Pasarela</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#FBBF24;">
+            <span style="font-size:0.9rem;font-weight:600;color:#B05C0A;">
               {pasarela_sel}</span>
             <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · {pas_activo.get('label','—')}</span>
@@ -1572,7 +1586,7 @@ with tab_cyber:
           <div>
             <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Inflación CPC</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#F87171;">
+            <span style="font-size:0.9rem;font-weight:600;color:#8C2A3B;">
               +{ev_activo.get('inflacion_cpc',0.5)*100:.0f}%</span>
           </div>
         </div>
@@ -1669,6 +1683,378 @@ with tab_cyber:
             """, unsafe_allow_html=True)
 
 
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 5 — LEY 21.719 PROTECCIÓN DE DATOS
+# ─────────────────────────────────────────────────────────────────────────────
+
+with tab_ley:
+
+    # ── CONSTANTES ──
+    # Valor UTM Enero 2025: $68.883 CLP (SII Chile)
+    UTM_CLP = 68_883
+
+    # Multas según Ley 21.719 Art. 38
+    # Leve: hasta 1.000 UTM | Grave: hasta 5.000 UTM | Gravísima: hasta 10.000 UTM
+    # Reincidencia grave/gravísima: hasta 20.000 UTM O 4% ingresos (el mayor)
+    MULTAS = {
+        "Leve":                {"utm": 1_000,  "label": "Infracción leve (ej: aviso tardío, formulario incompleto)"},
+        "Grave":               {"utm": 5_000,  "label": "Infracción grave (ej: transferencia sin consentimiento)"},
+        "Gravísima":           {"utm": 10_000, "label": "Infracción gravísima (ej: vulneración derechos ARCO)"},
+        "Reincidencia":        {"utm": 20_000, "label": "Reincidencia grave/gravísima (máximo legal)"},
+    }
+
+    # Costos de implementación según tamaño (rangos reales basados en GDPR/Chile)
+    COSTOS_IMPL = {
+        "PyME (< $500M CLP ingresos/año)": {
+            "auditoria":    (500_000, 1_500_000),
+            "tecnologia":   (300_000, 1_200_000),
+            "dpo_mes":      (150_000, 350_000),
+            "capacitacion": (100_000, 300_000),
+        },
+        "Mediana ($500M – $5B CLP ingresos/año)": {
+            "auditoria":    (1_500_000, 4_000_000),
+            "tecnologia":   (1_200_000, 5_000_000),
+            "dpo_mes":      (300_000, 700_000),
+            "capacitacion": (300_000, 800_000),
+        },
+        "Grande (> $5B CLP ingresos/año)": {
+            "auditoria":    (4_000_000, 10_000_000),
+            "tecnologia":   (5_000_000, 20_000_000),
+            "dpo_mes":      (700_000, 2_000_000),
+            "capacitacion": (800_000, 3_000_000),
+        },
+    }
+
+    # ── HEADER ──
+    st.markdown("""
+    <div style="background:#0D1420;border:1px solid #1A2535;border-left:4px solid #38BDF8;
+                border-radius:8px;padding:1rem 1.5rem;margin-bottom:1.5rem;">
+      <div style="font-size:0.65rem;color:#38BDF8;font-weight:700;letter-spacing:0.14em;
+                  text-transform:uppercase;margin-bottom:0.4rem;">
+        🔒 Módulo de Cumplimiento · Solo disponible en versión Chile
+      </div>
+      <div style="font-size:0.9rem;color:#CBD5E1;line-height:1.65;">
+        La <strong style="color:#F1F5F9;">Ley N°21.719</strong> entra en vigencia el
+        <strong style="color:#FBBF24;">1 de diciembre de 2026</strong>. Este módulo simula
+        la exposición financiera de tu ecommerce ante posibles multas y cuantifica el costo
+        de implementación del cumplimiento. <em>No constituye asesoría legal.</em>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── INPUTS ──
+    ley_col1, ley_col2 = st.columns([1, 1])
+
+    with ley_col1:
+        st.markdown("#### Perfil de tu operación")
+
+        tamano_empresa = st.selectbox(
+            "Tamaño de la empresa",
+            list(COSTOS_IMPL.keys()), index=0,
+            help="Define el rango de costos de implementación estimados"
+        )
+
+        ingresos_anuales = st.number_input(
+            "Ingresos anuales (CLP)",
+            min_value=0, max_value=500_000_000_000,
+            value=int(pl["total_ingresos"] * 12),
+            step=10_000_000,
+            help="Se usa para calcular la multa del 4% en caso de reincidencia"
+        )
+
+        st.markdown("#### Datos personales que recopila tu ecommerce")
+        datos_rut      = st.checkbox("RUT / Identificación", value=True)
+        datos_email    = st.checkbox("Email y nombre", value=True)
+        datos_direccion= st.checkbox("Dirección de despacho", value=True)
+        datos_comporta = st.checkbox("Comportamiento de navegación / cookies", value=True)
+        datos_pago     = st.checkbox("Datos de pago (tarjeta tokenizada)", value=False)
+        datos_geo      = st.checkbox("Geolocalización", value=False)
+
+        # Score de complejidad según datos tratados
+        score_datos = sum([datos_rut, datos_email, datos_direccion,
+                           datos_comporta, datos_pago, datos_geo])
+
+        st.markdown("#### Estado actual de cumplimiento")
+        tiene_dpo        = st.checkbox("¿Tiene DPO designado?", value=False)
+        tiene_cmp        = st.checkbox("¿Tiene gestor de consentimiento (cookies)?", value=False)
+        tiene_politica   = st.checkbox("¿Política de privacidad actualizada post-21.719?", value=False)
+        tiene_protocolo  = st.checkbox("¿Protocolo de notificación de brechas?", value=False)
+        tiene_contratos  = st.checkbox("¿Contratos con encargados de datos (proveedores)?", value=False)
+
+        cumplimiento_actual = sum([tiene_dpo, tiene_cmp, tiene_politica,
+                                   tiene_protocolo, tiene_contratos])
+
+    with ley_col2:
+        st.markdown("#### Escenario de infracción a simular")
+
+        tipo_infraccion = st.selectbox(
+            "Tipo de infracción",
+            list(MULTAS.keys()), index=1,
+            help="Según clasificación Ley 21.719 Art. 38"
+        )
+        st.caption(MULTAS[tipo_infraccion]["label"])
+
+        reincidencia = st.checkbox(
+            "Simular escenario de reincidencia",
+            value=False,
+            help="La reincidencia activa la multa de hasta 20.000 UTM o 4% de ingresos anuales"
+        )
+
+        meses_implementacion = st.slider(
+            "Meses de implementación estimados",
+            min_value=1, max_value=24, value=6,
+            help="Tiempo para alcanzar cumplimiento total"
+        )
+
+    # ── CÁLCULOS ──
+    utm_infraccion = MULTAS["Reincidencia"]["utm"] if reincidencia else MULTAS[tipo_infraccion]["utm"]
+    multa_utm_clp  = utm_infraccion * UTM_CLP
+    multa_4pct     = ingresos_anuales * 0.04
+
+    # En reincidencia, se aplica el mayor entre 20.000 UTM y 4%
+    if reincidencia:
+        multa_maxima = max(multa_utm_clp, multa_4pct)
+        multa_base   = multa_utm_clp
+    else:
+        multa_maxima = multa_utm_clp
+        multa_base   = multa_utm_clp
+
+    # Ajuste por tipo de datos (score sube la exposición)
+    factor_datos = 1.0 + (score_datos - 3) * 0.10  # +10% por cada dato adicional sobre 3
+    factor_datos = max(0.7, min(factor_datos, 1.5))
+    multa_ajustada = multa_maxima * factor_datos
+
+    # Costos de implementación (promedio del rango según tamaño)
+    ci = COSTOS_IMPL[tamano_empresa]
+    costo_auditoria    = sum(ci["auditoria"]) / 2
+    costo_tecnologia   = sum(ci["tecnologia"]) / 2
+    costo_dpo_total    = (sum(ci["dpo_mes"]) / 2) * meses_implementacion
+    costo_capacitacion = sum(ci["capacitacion"]) / 2
+    costo_total_impl   = costo_auditoria + costo_tecnologia + costo_dpo_total + costo_capacitacion
+
+    # Descuento por cumplimiento ya existente
+    descuento_cumplimiento = cumplimiento_actual / 5
+    costo_neto_impl = costo_total_impl * (1 - descuento_cumplimiento * 0.6)
+
+    # ROI del cumplimiento
+    roi_cumplimiento = (multa_ajustada - costo_neto_impl) / costo_neto_impl if costo_neto_impl > 0 else 0
+
+    # Semáforo de riesgo
+    pct_ingresos_multa = multa_ajustada / ingresos_anuales if ingresos_anuales > 0 else 0
+    if pct_ingresos_multa > 0.10 or cumplimiento_actual <= 1:
+        nivel_riesgo, color_riesgo, emoji_riesgo = "CRÍTICO", "#F87171", "🔴"
+    elif pct_ingresos_multa > 0.04 or cumplimiento_actual <= 3:
+        nivel_riesgo, color_riesgo, emoji_riesgo = "ALTO", "#FBBF24", "🟡"
+    else:
+        nivel_riesgo, color_riesgo, emoji_riesgo = "MODERADO", "#34D399", "🟢"
+
+    # ── KPIs PRINCIPALES ──
+    st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
+    st.markdown("#### Simulación de Exposición Financiera")
+
+    k1, k2, k3, k4 = st.columns(4)
+    with k1:
+        st.markdown(mc(
+            "Multa Máxima Estimada",
+            fmt_clp(multa_ajustada),
+            sub=f"{utm_infraccion:,} UTM · factor datos {factor_datos:.1f}x",
+            kind="danger"
+        ), unsafe_allow_html=True)
+    with k2:
+        st.markdown(mc(
+            "Costo de Implementación",
+            fmt_clp(costo_neto_impl),
+            sub=f"{meses_implementacion} meses · {cumplimiento_actual}/5 ya cumplidos",
+            kind="warning"
+        ), unsafe_allow_html=True)
+    with k3:
+        roi_kind = "success" if roi_cumplimiento > 1 else "warning"
+        st.markdown(mc(
+            "ROI del Cumplimiento",
+            f"{roi_cumplimiento:.1f}x",
+            sub="Ahorro en multa vs. costo de implementar",
+            kind=roi_kind
+        ), unsafe_allow_html=True)
+    with k4:
+        st.markdown(mc(
+            "Nivel de Riesgo",
+            f"{emoji_riesgo} {nivel_riesgo}",
+            sub=f"Multa = {pct_ingresos_multa*100:.1f}% de ingresos anuales",
+            kind="danger" if nivel_riesgo == "CRÍTICO" else "warning" if nivel_riesgo == "ALTO" else "success"
+        ), unsafe_allow_html=True)
+
+    # ── DESGLOSE DE COSTOS ──
+    st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
+    dc1, dc2 = st.columns(2)
+
+    with dc1:
+        st.markdown("#### Desglose Costo de Implementación")
+        items_costo = [
+            ("Auditoría legal inicial",          costo_auditoria),
+            ("Tecnología (CMP, cifrado, logs)",  costo_tecnologia),
+            (f"DPO externo ({meses_implementacion} meses)", costo_dpo_total),
+            ("Capacitación del equipo",          costo_capacitacion),
+        ]
+        for label, val in items_costo:
+            neg_val = -val
+            pct = val / costo_total_impl * 100 if costo_total_impl > 0 else 0
+            st.markdown(f"""
+            <div style="display:flex;justify-content:space-between;align-items:center;
+                        padding:0.55rem 0;border-bottom:1px solid #1A2535;">
+              <span style="font-size:0.83rem;color:#94A3B8;">{label}</span>
+              <span style="font-family:'DM Mono',monospace;font-size:0.83rem;
+                           color:#F87171;">{fmt_clp(val)}</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown(f"""
+        <div style="display:flex;justify-content:space-between;align-items:center;
+                    padding:0.7rem 0;border-top:2px solid #38BDF8;margin-top:0.3rem;">
+          <span style="font-size:0.88rem;color:#38BDF8;font-weight:700;">
+            Total neto (con {cumplimiento_actual}/5 ya cumplidos)
+          </span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.88rem;
+                       color:#38BDF8;font-weight:700;">{fmt_clp(costo_neto_impl)}</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with dc2:
+        st.markdown("#### Comparativa: Multa vs. Implementación")
+        import plotly.graph_objects as go
+        fig_ley = go.Figure()
+        fig_ley.add_trace(go.Bar(
+            name="Multa máxima estimada",
+            x=["Multa estimada", "Costo implementación"],
+            y=[multa_ajustada, costo_neto_impl],
+            marker_color=["#F87171", "#38BDF8"],
+            text=[fmt_clp(multa_ajustada), fmt_clp(costo_neto_impl)],
+            textposition="outside",
+            textfont=dict(color="#CBD5E1", size=11),
+            width=0.5,
+        ))
+        fig_ley.add_hline(
+            y=multa_4pct, line_dash="dot", line_color="#FBBF24",
+            annotation_text=f"4% ingresos = {fmt_clp(multa_4pct)}",
+            annotation_font_color="#FBBF24",
+            annotation_position="top right"
+        )
+        fig_ley.update_layout(
+            showlegend=False,
+            paper_bgcolor="#080C14", plot_bgcolor="#080C14",
+            font=dict(family="Roboto", color="#666666", size=11),
+            margin=dict(l=16, r=16, t=36, b=16),
+            yaxis=dict(gridcolor="#1A2535", zerolinecolor="#1A2535"),
+            xaxis=dict(gridcolor="#1A2535"),
+        )
+        st.plotly_chart(fig_ley, use_container_width=True)
+
+    # ── CHECKLIST DE CUMPLIMIENTO ──
+    st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
+    st.markdown("#### Checklist de Cumplimiento Ley 21.719 — Ecommerce")
+
+    checklist = [
+        (tiene_dpo,        "DPO designado",
+         "Designar un Delegado de Protección de Datos (interno o externo).",
+         "Obligatorio para empresas que traten datos a gran escala o datos sensibles."),
+        (tiene_cmp,        "Gestor de consentimiento (cookies)",
+         "Implementar una CMP (Consent Management Platform) en el sitio web.",
+         "Requerido para cookies de analítica, retargeting y personalización."),
+        (tiene_politica,   "Política de privacidad actualizada",
+         "Redactar y publicar política que incluya derechos ARCO, base de licitud y plazo de retención.",
+         "Debe estar visible antes de cualquier recolección de datos."),
+        (tiene_protocolo,  "Protocolo de notificación de brechas",
+         "Establecer proceso para notificar a la Agencia y afectados en máximo 72 horas.",
+         "Obligatorio bajo Art. 31 de la Ley 21.719."),
+        (tiene_contratos,  "Contratos con encargados de datos",
+         "Actualizar contratos con proveedores (email marketing, analytics, logística) que accedan a datos.",
+         "El responsable responde por los encargados bajo el nuevo régimen."),
+    ]
+
+    for cumple, titulo, accion, fundamento in checklist:
+        estado_color = "#34D399" if cumple else "#F87171"
+        estado_icon  = "✅" if cumple else "❌"
+        estado_texto = "Cumplido" if cumple else "Pendiente"
+        st.markdown(f"""
+        <div style="background:#0D1420;border:1px solid #1A2535;border-left:3px solid {estado_color};
+                    border-radius:8px;padding:0.85rem 1.1rem;margin-bottom:0.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div>
+              <span style="font-size:0.88rem;font-weight:600;color:#F1F5F9;">{estado_icon} {titulo}</span>
+              <div style="font-size:0.78rem;color:#64748B;margin-top:0.25rem;">{accion}</div>
+              <div style="font-size:0.72rem;color:#475569;margin-top:0.2rem;font-style:italic;">{fundamento}</div>
+            </div>
+            <span style="font-size:0.68rem;font-weight:700;color:{estado_color};
+                         white-space:nowrap;margin-left:1rem;">{estado_texto}</span>
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ── DIAGNÓSTICO FINAL ──
+    st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
+
+    if nivel_riesgo == "CRÍTICO":
+        diag_clase = "diag-box"
+        diag_titulo = "🔴 EXPOSICIÓN CRÍTICA — Acción Urgente Requerida"
+        diag_cuerpo = (
+            f"Tu ecommerce tiene una exposición máxima estimada de <strong>{fmt_clp(multa_ajustada)}</strong> "
+            f"bajo la Ley 21.719, con entrada en vigencia el <strong>1 de diciembre de 2026</strong>. "
+            f"Con {cumplimiento_actual} de 5 requisitos cumplidos, el nivel de incumplimiento es alto.<br><br>"
+            f"El costo de implementación estimado es <strong>{fmt_clp(costo_neto_impl)}</strong> — "
+            f"el ROI de cumplir es <strong>{roi_cumplimiento:.1f}x</strong>: "
+            f"por cada peso invertido en implementación, evitas {roi_cumplimiento:.1f} pesos en multa potencial."
+        )
+    elif nivel_riesgo == "ALTO":
+        diag_clase = "diag-box warning"
+        diag_titulo = "🟡 RIESGO ALTO — Iniciar Implementación Este Trimestre"
+        diag_cuerpo = (
+            f"La exposición estimada es <strong>{fmt_clp(multa_ajustada)}</strong>. "
+            f"Tienes {cumplimiento_actual} de 5 requisitos cumplidos — avance parcial pero insuficiente. "
+            f"Con {meses_implementacion} meses de implementación y entrada en vigencia en diciembre 2026, "
+            f"el margen de tiempo se está reduciendo.<br><br>"
+            f"Prioridad inmediata: política de privacidad y protocolo de brechas — son los de menor costo y mayor impacto en la evaluación de la Agencia."
+        )
+    else:
+        diag_clase = "diag-box ok"
+        diag_titulo = "🟢 RIESGO MODERADO — Completar los Requisitos Pendientes"
+        diag_cuerpo = (
+            f"Tu nivel de cumplimiento es bueno ({cumplimiento_actual}/5). "
+            f"La exposición estimada ({fmt_clp(multa_ajustada)}) es manejable en relación a tu operación. "
+            f"Completa los requisitos pendientes antes de diciembre 2026 y documenta todo el proceso — "
+            f"la Agencia valorará la evidencia de buena fe en el cumplimiento."
+        )
+
+    st.markdown(f"""
+    <div class="{diag_clase}">
+      <div class="diag-title">{diag_titulo}</div>
+      <div class="diag-body">{diag_cuerpo}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(
+        '<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;'
+        'background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;">'
+        '<a href="https://www.aovalle.com" target="_blank" '
+        'style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">'
+        '→ Solicitar asesoría en cumplimiento Ley 21.719 · aovalle.com ↗</a></div>',
+        unsafe_allow_html=True
+    )
+
+    # Disclaimer legal
+    st.markdown("""
+    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#0B1117;
+                border:1px solid #1A2535;border-radius:6px;
+                font-size:0.72rem;color:#475569;line-height:1.6;">
+      <strong style="color:#64748B;">Disclaimer:</strong>
+      Este módulo es una herramienta de simulación financiera referencial, no constituye
+      asesoría legal. Los rangos de multas y costos son estimaciones basadas en la
+      Ley N°21.719, el valor UTM vigente y benchmarks de implementación GDPR/Chile.
+      Consulta siempre con un abogado especialista en protección de datos antes de
+      tomar decisiones de cumplimiento. Valor UTM utilizado: $68.883 CLP (enero 2025).
+    </div>
+    """, unsafe_allow_html=True)
+
 # ─────────────────────────────────────────────────────────────────────────────
 # FOOTER CTA
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1702,9 +2088,8 @@ st.markdown(f"""
             letter-spacing:0.06em;text-transform:uppercase;">
     Solicitar Diagnóstico → aovalle.com
   </a>
-  <div style="font-size:0.62rem;color:#ffffff;margin-top:1.25rem;">
-    RetailPulse Latam v2.0 · Mercado Chileno · linkedin.com/in/ovallealejandro<br>
-Copyright &COPY; 2026 | <a>AOvalle.com</a> | Todos los Derechos Reservados
+  <div style="font-size:0.62rem;color:#2D3748;margin-top:1.25rem;">
+    RetailPulse Latam v2.0 · linkedin.com/in/ovallealejandro
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -1749,5 +2134,3 @@ with col_tc_c:
             st.divider()
 
         st.caption("© 2026 Alejandro Ovalle · aovalle.com · Todos los derechos reservados")
-
-
