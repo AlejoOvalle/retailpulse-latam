@@ -1731,7 +1731,7 @@ with tab_ley:
         La <strong style="color:#F1F5F9;">Ley N°21.719</strong> entra en vigencia el
         <strong style="color:#FBBF24;">1 de diciembre de 2026</strong>. Este módulo simula
         la exposición financiera de tu ecommerce ante posibles multas y cuantifica el costo
-        de implementación del cumplimiento. <em>No constituye asesoría legal.</em>
+        de implementación del cumplimiento (valores referenciales). <em>No constituye asesoría legal.</em>
       </div>
     </div>
     """, unsafe_allow_html=True)
