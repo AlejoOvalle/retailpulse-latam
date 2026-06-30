@@ -1705,13 +1705,13 @@ with tab_ley:
             "dpo_mes":      (150_000, 350_000),
             "capacitacion": (100_000, 300_000),
         },
-        "Mediana ($500M – $5B CLP ingresos/año)": {
+        "Mediana ($500M – $5.000M CLP ingresos/año)": {
             "auditoria":    (1_500_000, 4_000_000),
             "tecnologia":   (1_200_000, 5_000_000),
             "dpo_mes":      (300_000, 700_000),
             "capacitacion": (300_000, 800_000),
         },
-        "Grande (> $5B CLP ingresos/año)": {
+        "Grande (> $5.000M CLP ingresos/año)": {
             "auditoria":    (4_000_000, 10_000_000),
             "tecnologia":   (5_000_000, 20_000_000),
             "dpo_mes":      (700_000, 2_000_000),
