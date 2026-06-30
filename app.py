@@ -366,13 +366,18 @@ st.markdown("""
 # ─────────────────────────────────────────────────────────────────────────────
 
 def fmt_clp(v, decimals=1):
-    if abs(v) >= 1_000_000_000:
-        return f"${v/1_000_000_000:,.{decimals}f}B"
-    if abs(v) >= 1_000_000:
-        return f"${v/1_000_000:,.{decimals}f}M"
-    if abs(v) >= 1_000:
-        return f"${v/1_000:,.0f}K"
-    return f"${v:,.0f}"
+    sign = "-" if v < 0 else ""
+    av   = abs(v)
+    if av >= 1_000_000:
+        d   = 0 if av >= 1_000_000_000 else decimals
+        val = av / 1_000_000
+        fmt = "{:,.{}f}".format(val, d)
+        s   = fmt.replace(",", "X").replace(".", ",").replace("X", ".")
+        return "{}${}M".format(sign, s)
+    if av >= 1_000:
+        s = "{:,.0f}".format(av / 1_000).replace(",", ".")
+        return "{}${}K".format(sign, s)
+    return "${}".format("{:,.0f}".format(av))
 
 def fmt_pct(v, d=1): return f"{v*100:.{d}f}%"
 def fmt_x(v, d=2):   return f"{v:.{d}f}x"
