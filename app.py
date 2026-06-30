@@ -140,7 +140,7 @@ if not st.session_state["autenticado"]:
 
 st.markdown("""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
 
   html, body, [class*="css"] { font-family: 'Roboto', sans-serif; }
 
@@ -152,7 +152,7 @@ st.markdown("""
     border-right: 1px solid #1A2535;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #38BDF8;
+    color: #BF3F57;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -166,9 +166,9 @@ st.markdown("""
   .stSlider > div > div > div > div { background: #38BDF8 !important; }
 
   /* ── HEADINGS ── */
-  h1 { color: #F1F5F9 !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
-  h2 { color: #CBD5E1 !important; font-weight: 600 !important; }
-  h3 { color: #94A3B8 !important; font-weight: 500 !important; }
+  h1 { color: #1A1A1A !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
+  h2 { color: #333333 !important; font-weight: 600 !important; }
+  h3 { color: #666666 !important; font-weight: 500 !important; }
 
   /* ── MODO BADGE ── */
   .modo-badge {
@@ -188,8 +188,8 @@ st.markdown("""
 
   /* ── METRIC CARDS ── */
   .metric-card {
-    background: #0D1420;
-    border: 1px solid #1A2535;
+    background: #FFFFFF;
+    border: 0.5px solid #E8E8E6;
     border-radius: 10px;
     padding: 1.1rem 1.3rem;
     position: relative;
@@ -203,25 +203,25 @@ st.markdown("""
     height: 2px;
     background: linear-gradient(90deg, #38BDF8, #0284C7);
   }
-  .metric-card.danger::before  { background: linear-gradient(90deg, #F87171, #DC2626); }
-  .metric-card.warning::before { background: linear-gradient(90deg, #FBBF24, #D97706); }
-  .metric-card.success::before { background: linear-gradient(90deg, #34D399, #059669); }
-  .metric-card.purple::before  { background: linear-gradient(90deg, #C084FC, #9333EA); }
+  .metric-card.danger::before  { background: linear-gradient(90deg, #BF3F57, #8C2A3B); }
+  .metric-card.warning::before { background: linear-gradient(90deg, #B05C0A, #7A3E05); }
+  .metric-card.success::before { background: linear-gradient(90deg, #2A7D4F, #1A5233); }
+  .metric-card.purple::before  { background: linear-gradient(90deg, #7C3AED, #5B21B6); }
   .metric-card .label {
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #475569; margin-bottom: 0.45rem;
+    text-transform: uppercase; color: #888888; margin-bottom: 0.45rem;
   }
   .metric-card .value {
     font-family: 'DM Mono', monospace;
-    font-size: 1.5rem; font-weight: 500; color: #F1F5F9; line-height: 1.1;
+    font-size: 1.5rem; font-weight: 500; color: #1A1A1A; line-height: 1.1;
   }
   .metric-card .value.sm { font-size: 1.15rem; }
   .metric-card .sub {
-    font-size: 0.72rem; color: #64748B; margin-top: 0.35rem; line-height: 1.4;
+    font-size: 0.72rem; color: #888888; margin-top: 0.35rem; line-height: 1.4;
   }
   .metric-card .delta { font-size: 0.72rem; margin-top: 0.3rem; }
-  .metric-card .delta.neg { color: #F87171; }
-  .metric-card .delta.pos { color: #34D399; }
+  .metric-card .delta.neg { color: #BF3F57; }
+  .metric-card .delta.pos { color: #2A7D4F; }
 
   /* ── SECTION TABS ── */
   .section-tab {
@@ -236,8 +236,8 @@ st.markdown("""
 
   /* ── CANAL ROWS ── */
   .canal-row {
-    background: #0D1420;
-    border: 1px solid #1A2535;
+    background: #FFFFFF;
+    border: 0.5px solid #E8E8E6;
     border-radius: 8px;
     padding: 0.85rem 1.1rem;
     margin-bottom: 0.4rem;
@@ -246,14 +246,14 @@ st.markdown("""
   .canal-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .canal-name { font-size: 0.8rem; font-weight: 600; color: #CBD5E1; min-width: 110px; }
+  .canal-name { font-size: 0.8rem; font-weight: 600; color: #1A1A1A; min-width: 110px; }
   .canal-bar-bg {
-    flex: 1; background: #1A2535; border-radius: 3px; height: 6px; position: relative;
+    flex: 1; background: #E8E8E6; border-radius: 3px; height: 6px; position: relative;
   }
   .canal-bar-fill {
     position: absolute; left: 0; top: 0; height: 6px; border-radius: 3px;
   }
-  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #94A3B8; min-width: 90px; text-align: right; }
+  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #888888; min-width: 90px; text-align: right; }
   .canal-roas {
     font-family: 'DM Mono', monospace; font-size: 0.75rem;
     padding: 0.15rem 0.5rem; border-radius: 4px; min-width: 52px; text-align: center;
@@ -264,10 +264,10 @@ st.markdown("""
 
   /* ── P&L TABLE ── */
   .pnl-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #1A2535; }
+  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 0.5px solid #E8E8E6; }
   .pnl-table tr:last-child td { border-bottom: none; }
-  .pnl-table .pnl-label { color: #94A3B8; }
-  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #E2E8F0; }
+  .pnl-table .pnl-label { color: #888888; }
+  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #1A1A1A; }
   .pnl-table .pnl-total td { border-top: 1px solid #38BDF8; padding-top: 0.7rem; }
   .pnl-table .pnl-total .pnl-label { color: #38BDF8; font-weight: 700; }
   .pnl-table .pnl-total .pnl-val   { color: #38BDF8; font-weight: 700; }
@@ -310,12 +310,12 @@ st.markdown("""
   }
 
   /* ── DIVIDER ── */
-  .sdiv { border: none; border-top: 1px solid #1A2535; margin: 1.75rem 0; }
+  .sdiv { border: none; border-top: 0.5px solid #E8E8E6; margin: 1.75rem 0; }
 
   /* ── FOOTER ── */
   .footer-cta {
-    background: linear-gradient(135deg, #0D1420 0%, #0C1E35 100%);
-    border: 1px solid #1A2535; border-radius: 12px;
+    background: linear-gradient(135deg, #FDF0F2 0%, #FAE0E4 100%);
+    border: 0.5px solid #E8C8CE; border-radius: 12px;
     padding: 1.75rem 2rem; text-align: center; margin-top: 2rem;
   }
 
@@ -354,8 +354,8 @@ st.markdown("""
   .main .block-container,
   section.main,
   .stMainBlockContainer {
-    background-color: #080C14 !important;
-    background: #080C14 !important;
+    background-color: #F5F5F3 !important;
+    background: #F5F5F3 !important;
   }
 </style>
 """, unsafe_allow_html=True)
@@ -366,13 +366,26 @@ st.markdown("""
 # ─────────────────────────────────────────────────────────────────────────────
 
 def fmt_clp(v, decimals=1):
-    if abs(v) >= 1_000_000_000:
-        return f"${v/1_000_000_000:,.{decimals}f}B"
-    if abs(v) >= 1_000_000:
-        return f"${v/1_000_000:,.{decimals}f}M"
-    if abs(v) >= 1_000:
-        return f"${v/1_000:,.0f}K"
-    return f"${v:,.0f}"
+    """
+    Formato moneda CLP sin escala B (billones).
+    Sobre $1.000M: sin decimales. Bajo $1.000M: con decimales según parámetro.
+    Usa punto como separador de miles y coma como decimal (estándar Chile).
+    Ej: $1.377.660.000 → $1.378M  |  $57.800.000 → $57,8M  |  $350.000 → $350K
+    """
+    sign = "-" if v < 0 else ""
+    av   = abs(v)
+    if av >= 1_000_000:
+        d   = 0 if av >= 1_000_000_000 else decimals
+        val = av / 1_000_000
+        fmt = "{:,.{}f}".format(val, d)
+        s   = fmt.replace(",", "X").replace(".", ",").replace("X", ".")
+        return "{}${}M".format(sign, s)
+    if av >= 1_000:
+        fmt = "{:,.0f}".format(av / 1_000)
+        s   = fmt.replace(",", ".")
+        return "{}${}K".format(sign, s)
+    return "${}".format("{:,.0f}".format(av))
+
 
 def fmt_pct(v, d=1): return f"{v*100:.{d}f}%"
 def fmt_x(v, d=2):   return f"{v:.{d}f}x"
@@ -1045,7 +1058,7 @@ with st.sidebar:
     <hr style="border:none;border-top:1px solid #1A2535;margin:1.2rem 0 0.8rem 0;"/>
     <div style="font-size:0.62rem;color:#2D3748;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
-      <a href="https://www.aovalle.com" style="color:#38BDF8;text-decoration:none;">aovalle.com</a>
+      <a href="https://www.aovalle.com" style="color:#BF3F57;text-decoration:none;">aovalle.com</a>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1124,7 +1137,7 @@ badge_html = (
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
-    '<span style="background:#0C2340;color:#38BDF8;border:1px solid #1E3A5F;'
+    '<span style="background:#FDF0F2;color:#8C2A3B;border:0.5px solid #E8C8CE;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">💼 Modo Gerente</span>'
 )
@@ -1555,9 +1568,9 @@ with tab_cyber:
                     padding:0.75rem 1.25rem;margin-bottom:1rem;
                     display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
           <div>
-            <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
+            <span style="font-size:0.62rem;color:#888888;text-transform:uppercase;
                          letter-spacing:0.1em;">Evento</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#38BDF8;">
+            <span style="font-size:0.9rem;font-weight:600;color:#BF3F57;">
               {evento_cyber_sel}</span>
             <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · Tráfico ×{ev_activo.get('multiplicador',4)} · {ev_activo.get('mes','—')}</span>
@@ -1565,7 +1578,7 @@ with tab_cyber:
           <div>
             <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Pasarela</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#FBBF24;">
+            <span style="font-size:0.9rem;font-weight:600;color:#B05C0A;">
               {pasarela_sel}</span>
             <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · {pas_activo.get('label','—')}</span>
@@ -1573,7 +1586,7 @@ with tab_cyber:
           <div>
             <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Inflación CPC</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#F87171;">
+            <span style="font-size:0.9rem;font-weight:600;color:#8C2A3B;">
               +{ev_activo.get('inflacion_cpc',0.5)*100:.0f}%</span>
           </div>
         </div>
@@ -1930,7 +1943,7 @@ with tab_ley:
         fig_ley.update_layout(
             showlegend=False,
             paper_bgcolor="#080C14", plot_bgcolor="#080C14",
-            font=dict(family="Roboto", color="#94A3B8", size=11),
+            font=dict(family="Roboto", color="#666666", size=11),
             margin=dict(l=16, r=16, t=36, b=16),
             yaxis=dict(gridcolor="#1A2535", zerolinecolor="#1A2535"),
             xaxis=dict(gridcolor="#1A2535"),
@@ -2075,9 +2088,8 @@ st.markdown(f"""
             letter-spacing:0.06em;text-transform:uppercase;">
     Solicitar Diagnóstico → aovalle.com
   </a>
-  <div style="font-size:0.62rem;color:#ffffff;margin-top:1.25rem;">
-    RetailPulse Latam v2.0 · Mercado Chileno · linkedin.com/in/ovallealejandro<br>
-Copyright &COPY; 2026 | <a>AOvalle.com</a> | Todos los Derechos Reservados
+  <div style="font-size:0.62rem;color:#2D3748;margin-top:1.25rem;">
+    RetailPulse Latam v2.0 · linkedin.com/in/ovallealejandro
   </div>
 </div>
 """, unsafe_allow_html=True)
