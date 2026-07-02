@@ -1323,7 +1323,7 @@ with tab_pl:
         """, unsafe_allow_html=True)
 
     with wf_col:
-        st.plotly_chart(grafico_pl_waterfall(pl), use_container_width=True)
+        st.plotly_chart(grafico_pl_waterfall(pl), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1407,9 +1407,9 @@ with tab_canales:
 
     gc1, gc2 = st.columns(2)
     with gc1:
-        st.plotly_chart(grafico_mix_canales(canales_data), use_container_width=True)
+        st.plotly_chart(grafico_mix_canales(canales_data), use_container_width=True, config={'scrollZoom': False})
     with gc2:
-        st.plotly_chart(grafico_roas_canales(canales_data), use_container_width=True)
+        st.plotly_chart(grafico_roas_canales(canales_data), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1495,7 +1495,7 @@ with tab_retencion:
         ), unsafe_allow_html=True)
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
-    st.plotly_chart(grafico_retencion(cohorte_rows), use_container_width=True)
+    st.plotly_chart(grafico_retencion(cohorte_rows), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1620,9 +1620,10 @@ with tab_cyber:
         cyber_w1, cyber_w2 = st.columns(2)
         with cyber_w1:
             st.plotly_chart(
-                grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, [cyber_a_on, cyber_b_on, cyber_c_on]),
-                use_container_width=True
-            )
+    grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, [cyber_a_on, cyber_b_on, cyber_c_on]),
+    use_container_width=True,
+    config={'scrollZoom': False}
+)
         with cyber_w2:
             # EBITDA antes vs después del Cyber
             fig_ebitda = go.Figure()
@@ -1641,7 +1642,7 @@ with tab_cyber:
                 showlegend=False, **THEME,
             )
             fig_ebitda.update_yaxes(gridcolor="#1A2535", zerolinecolor="#475569")
-            st.plotly_chart(fig_ebitda, use_container_width=True)
+            st.plotly_chart(fig_ebitda, use_container_width=True, config={'scrollZoom': False})
 
         # Diagnósticos Cyber
         st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
@@ -1940,7 +1941,7 @@ with tab_ley:
             yaxis=dict(gridcolor="#1A2535", zerolinecolor="#1A2535"),
             xaxis=dict(gridcolor="#1A2535"),
         )
-        st.plotly_chart(fig_ley, use_container_width=True)
+        st.plotly_chart(fig_ley, use_container_width=True, config={'scrollZoom': False})
 
     # ── CHECKLIST DE CUMPLIMIENTO ──
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
