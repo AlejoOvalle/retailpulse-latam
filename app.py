@@ -120,7 +120,7 @@ def pantalla_login():
 
         st.markdown("""
         <div style="text-align:center; margin-top:2rem;
-                    font-size:0.65rem; color:#1E2D3D;">
+                    font-size:0.65rem; color:#6E6E6A;">
           aovalle.com · Acceso exclusivo para clientes
         </div>
         """, unsafe_allow_html=True)
@@ -144,11 +144,11 @@ st.markdown("""
 
   html, body, [class*="css"] { font-family: 'Roboto', sans-serif; }
 
-  .stApp { background: #333333; color: #EDEDEB; }
+  .stApp { background: #1A1A18; color: #EDEDEB; }
 
   /* ── SIDEBAR ── */
   [data-testid="stSidebar"] {
-    background: #0B1017 !important;
+    background: #141310 !important;
     border-right: 1px solid #2E2E2A;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
@@ -164,6 +164,10 @@ st.markdown("""
   }
   .stSlider > div > div > div { background: #2E2E2A !important; }
   .stSlider > div > div > div > div { background: #D65E67 !important; }
+  .stSlider [data-baseweb="slider"] div[role="slider"] { background-color: #D65E67 !important; }
+  .stSlider [data-baseweb="tooltip"], .stSlider [data-testid="stTickBarMin"], .stSlider [data-testid="stTickBarMax"] {
+    color: #EDEDEB !important; background-color: #2A1F21 !important;
+  }
 
   /* ── HEADINGS ── */
   h1 { color: #EDEDEB !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
@@ -183,7 +187,7 @@ st.markdown("""
     text-transform: uppercase;
     margin-bottom: 0.25rem;
   }
-  .modo-gerente { background: #0C2340; color: #D65E67; border: 1px solid #1E3A5F; }
+  .modo-gerente { background: #2A1F21; color: #D65E67; border: 1px solid #3A2E30; }
   .modo-pyme    { background: #1A2E0F; color: #86EFAC; border: 1px solid #2D4A1E; }
 
   /* ── METRIC CARDS ── */
@@ -201,7 +205,7 @@ st.markdown("""
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #D65E67, #0284C7);
+    background: linear-gradient(90deg, #D65E67, #6E6E6A);
   }
   .metric-card.danger::before  { background: linear-gradient(90deg, #F87171, #DC2626); }
   .metric-card.warning::before { background: linear-gradient(90deg, #FBBF24, #D97706); }
@@ -232,7 +236,7 @@ st.markdown("""
     background: #232320; border: 1px solid #2E2E2A;
     border-bottom: none; color: #6E6E6A;
   }
-  .section-tab.active { background: #111827; color: #D65E67; border-color: #D65E67; }
+  .section-tab.active { background: #2E2E2A; color: #D65E67; border-color: #D65E67; }
 
   /* ── CANAL ROWS ── */
   .canal-row {
@@ -273,7 +277,7 @@ st.markdown("""
   .pnl-table .pnl-total .pnl-val   { color: #D65E67; font-weight: 700; }
   .pnl-table .pnl-neg { color: #F87171 !important; }
   .pnl-table .pnl-pos { color: #34D399 !important; }
-  .pnl-section td { background: #0B1017; color: #767672 !important;
+  .pnl-section td { background: #141310; color: #767672 !important;
     font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 0.9rem; }
 
   /* ── DIAGNOSIS BOX ── */
@@ -314,7 +318,7 @@ st.markdown("""
 
   /* ── FOOTER ── */
   .footer-cta {
-    background: linear-gradient(135deg, #232320 0%, #0C1E35 100%);
+    background: linear-gradient(135deg, #232320 0%, #2A2320 100%);
     border: 1px solid #2E2E2A; border-radius: 12px;
     padding: 1.75rem 2rem; text-align: center; margin-top: 2rem;
   }
@@ -337,7 +341,7 @@ st.markdown("""
     font-size: 0.8rem !important; padding: 0.5rem 1rem !important;
   }
   .stTabs [aria-selected="true"] {
-    background: #111827 !important; color: #D65E67 !important;
+    background: #2E2E2A !important; color: #D65E67 !important;
     border-color: #D65E67 !important;
   }
   .stTabs [data-baseweb="tab-panel"] {
@@ -398,7 +402,7 @@ def mc(label, value, sub=None, delta=None, kind="default", sm=False):
     </div>"""
 
 THEME = dict(
-    paper_bgcolor="#0c1320", plot_bgcolor="#0c1320",
+    paper_bgcolor="#232320", plot_bgcolor="#232320",
     font=dict(family="Roboto", color="#8C8C87", size=11),
     margin=dict(l=16, r=16, t=36, b=16),
 )
@@ -806,7 +810,7 @@ def grafico_retencion(cohorte_rows):
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["clientes"], mode="lines+markers", name="Clientes Activos",
         line=dict(color="#D65E67", width=2), marker=dict(size=5),
-        fill="tozeroy", fillcolor="rgba(56,189,248,0.08)",
+        fill="tozeroy", fillcolor="rgba(214,94,103,0.08)",
     ))
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["ltv_acum"], mode="lines+markers", name="LTV Acumulado / Cliente",
@@ -1048,7 +1052,7 @@ with st.sidebar:
 
     st.markdown("""
     <hr style="border:none;border-top:1px solid #2E2E2A;margin:1.2rem 0 0.8rem 0;"/>
-    <div style="font-size:0.62rem;color:#2D3748;text-align:center;line-height:1.6;">
+    <div style="font-size:0.62rem;color:#6E6E6A;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
       <a href="https://www.aovalle.com" style="color:#D65E67;text-decoration:none;">aovalle.com</a>
     </div>
@@ -1129,7 +1133,7 @@ badge_html = (
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
-    '<span style="background:#0C2340;color:#D65E67;border:1px solid #1E3A5F;'
+    '<span style="background:#2A1F21;color:#D65E67;border:1px solid #3A2E30;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">💼 Modo Gerente</span>'
 )
@@ -2035,7 +2039,7 @@ with tab_ley:
 
     # Disclaimer legal
     st.markdown("""
-    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#0B1117;
+    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#232320;
                 border:1px solid #2E2E2A;border-radius:6px;
                 font-size:0.72rem;color:#767672;line-height:1.6;">
       <strong style="color:#6E6E6A;">Disclaimer:</strong>
