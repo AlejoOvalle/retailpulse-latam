@@ -48,19 +48,19 @@ def pantalla_login():
         justify-content: center; min-height: 70vh; text-align: center;
       }
       .login-logo {
-        font-size: 2.2rem; font-weight: 700; color: #EDEDEB;
+        font-size: 2.2rem; font-weight: 700; color: #F1F5F9;
         letter-spacing: -0.02em; margin-bottom: 0.25rem;
       }
       .login-sub {
-        font-size: 0.75rem; color: #D65E67; letter-spacing: 0.15em;
+        font-size: 0.75rem; color: #38BDF8; letter-spacing: 0.15em;
         text-transform: uppercase; margin-bottom: 2.5rem;
       }
       .login-box {
-        background: #232320; border: 1px solid #2E2E2A;
+        background: #0D1420; border: 1px solid #1A2535;
         border-radius: 12px; padding: 2rem 2.5rem;
         width: 100%; max-width: 380px;
       }
-      .login-box label { color: #8C8C87 !important; font-size: 0.8rem !important; }
+      .login-box label { color: #94A3B8 !important; font-size: 0.8rem !important; }
       .login-error {
         background: #450A0A; border: 1px solid #DC2626;
         border-radius: 6px; padding: 0.6rem 1rem;
@@ -76,11 +76,11 @@ def pantalla_login():
           <img src="data:image/png;base64,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"
                style="height:56px; width:auto; margin-bottom:1.25rem; border-radius:10px;"
                alt="aovalle.com logo" />
-          <div style="font-size:2.2rem; font-weight:700; color:#EDEDEB;
+          <div style="font-size:2.2rem; font-weight:700; color:#F1F5F9;
                       letter-spacing:-0.02em; margin-bottom:0.2rem;">
             RetailPulse Latam | Chile
           </div>
-          <div style="font-size:0.7rem; color:#D65E67; letter-spacing:0.15em;
+          <div style="font-size:0.7rem; color:#38BDF8; letter-spacing:0.15em;
                       text-transform:uppercase; margin-bottom:2.5rem;">
             Simulador P&L · Ecommerce · v2.0 Beta
           </div>
@@ -89,9 +89,9 @@ def pantalla_login():
 
         with st.container():
             st.markdown("""
-            <div style="background:#232320; border:1px solid #2E2E2A;
+            <div style="background:#0D1420; border:1px solid #1A2535;
                         border-radius:12px; padding:1.75rem 2rem;">
-              <div style="font-size:0.75rem; color:#6E6E6A; font-weight:600;
+              <div style="font-size:0.75rem; color:#64748B; font-weight:600;
                           letter-spacing:0.1em; text-transform:uppercase;
                           margin-bottom:1rem;">Acceso restringido</div>
             """, unsafe_allow_html=True)
@@ -120,7 +120,7 @@ def pantalla_login():
 
         st.markdown("""
         <div style="text-align:center; margin-top:2rem;
-                    font-size:0.65rem; color:#6E6E6A;">
+                    font-size:0.65rem; color:#1E2D3D;">
           aovalle.com · Acceso exclusivo para clientes
         </div>
         """, unsafe_allow_html=True)
@@ -144,15 +144,15 @@ st.markdown("""
 
   html, body, [class*="css"] { font-family: 'Roboto', sans-serif; }
 
-  .stApp { background: #1A1A18; color: #EDEDEB; }
+  .stApp { background: #333333; color: #E8EDF5; }
 
   /* ── SIDEBAR ── */
   [data-testid="stSidebar"] {
-    background: #141310 !important;
-    border-right: 1px solid #2E2E2A;
+    background: #0B1017 !important;
+    border-right: 1px solid #1A2535;
   }
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #D65E67;
+    color: #38BDF8;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -160,19 +160,15 @@ st.markdown("""
     margin-top: 1.6rem;
     margin-bottom: 0.3rem;
     padding-bottom: 0.35rem;
-    border-bottom: 1px solid #2E2E2A;
+    border-bottom: 1px solid #1A2535;
   }
-  .stSlider > div > div > div { background: #2E2E2A !important; }
-  .stSlider > div > div > div > div { background: #D65E67 !important; }
-  .stSlider [data-baseweb="slider"] div[role="slider"] { background-color: #D65E67 !important; }
-  .stSlider [data-baseweb="tooltip"], .stSlider [data-testid="stTickBarMin"], .stSlider [data-testid="stTickBarMax"] {
-    color: #EDEDEB !important; background-color: #2A1F21 !important;
-  }
+  .stSlider > div > div > div { background: #1A2535 !important; }
+  .stSlider > div > div > div > div { background: #38BDF8 !important; }
 
   /* ── HEADINGS ── */
-  h1 { color: #EDEDEB !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
-  h2 { color: #C7C7C2 !important; font-weight: 600 !important; }
-  h3 { color: #8C8C87 !important; font-weight: 500 !important; }
+  h1 { color: #F1F5F9 !important; font-weight: 700 !important; letter-spacing: -0.025em !important; }
+  h2 { color: #CBD5E1 !important; font-weight: 600 !important; }
+  h3 { color: #94A3B8 !important; font-weight: 500 !important; }
 
   /* ── MODO BADGE ── */
   .modo-badge {
@@ -187,13 +183,13 @@ st.markdown("""
     text-transform: uppercase;
     margin-bottom: 0.25rem;
   }
-  .modo-gerente { background: #2A1F21; color: #D65E67; border: 1px solid #3A2E30; }
+  .modo-gerente { background: #0C2340; color: #38BDF8; border: 1px solid #1E3A5F; }
   .modo-pyme    { background: #1A2E0F; color: #86EFAC; border: 1px solid #2D4A1E; }
 
   /* ── METRIC CARDS ── */
   .metric-card {
-    background: #232320;
-    border: 1px solid #2E2E2A;
+    background: #0D1420;
+    border: 1px solid #1A2535;
     border-radius: 10px;
     padding: 1.1rem 1.3rem;
     position: relative;
@@ -205,7 +201,7 @@ st.markdown("""
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #D65E67, #6E6E6A);
+    background: linear-gradient(90deg, #38BDF8, #0284C7);
   }
   .metric-card.danger::before  { background: linear-gradient(90deg, #F87171, #DC2626); }
   .metric-card.warning::before { background: linear-gradient(90deg, #FBBF24, #D97706); }
@@ -213,15 +209,15 @@ st.markdown("""
   .metric-card.purple::before  { background: linear-gradient(90deg, #C084FC, #9333EA); }
   .metric-card .label {
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #767672; margin-bottom: 0.45rem;
+    text-transform: uppercase; color: #475569; margin-bottom: 0.45rem;
   }
   .metric-card .value {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem; font-weight: 500; color: #EDEDEB; line-height: 1.1;
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem; font-weight: 500; color: #F1F5F9; line-height: 1.1;
   }
   .metric-card .value.sm { font-size: 1.15rem; }
   .metric-card .sub {
-    font-size: 0.72rem; color: #6E6E6A; margin-top: 0.35rem; line-height: 1.4;
+    font-size: 0.72rem; color: #64748B; margin-top: 0.35rem; line-height: 1.4;
   }
   .metric-card .delta { font-size: 0.72rem; margin-top: 0.3rem; }
   .metric-card .delta.neg { color: #F87171; }
@@ -233,15 +229,15 @@ st.markdown("""
     padding: 0.5rem 1.1rem;
     border-radius: 6px 6px 0 0;
     font-size: 0.78rem; font-weight: 600;
-    background: #232320; border: 1px solid #2E2E2A;
-    border-bottom: none; color: #6E6E6A;
+    background: #0D1420; border: 1px solid #1A2535;
+    border-bottom: none; color: #64748B;
   }
-  .section-tab.active { background: #2E2E2A; color: #D65E67; border-color: #D65E67; }
+  .section-tab.active { background: #111827; color: #38BDF8; border-color: #38BDF8; }
 
   /* ── CANAL ROWS ── */
   .canal-row {
-    background: #232320;
-    border: 1px solid #2E2E2A;
+    background: #0D1420;
+    border: 1px solid #1A2535;
     border-radius: 8px;
     padding: 0.85rem 1.1rem;
     margin-bottom: 0.4rem;
@@ -250,16 +246,16 @@ st.markdown("""
   .canal-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .canal-name { font-size: 0.8rem; font-weight: 600; color: #C7C7C2; min-width: 110px; }
+  .canal-name { font-size: 0.8rem; font-weight: 600; color: #CBD5E1; min-width: 110px; }
   .canal-bar-bg {
-    flex: 1; background: #2E2E2A; border-radius: 3px; height: 6px; position: relative;
+    flex: 1; background: #1A2535; border-radius: 3px; height: 6px; position: relative;
   }
   .canal-bar-fill {
     position: absolute; left: 0; top: 0; height: 6px; border-radius: 3px;
   }
-  .canal-val { font-family: 'Roboto', sans-serif; font-size: 0.78rem; color: #8C8C87; min-width: 90px; text-align: right; }
+  .canal-val { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: #94A3B8; min-width: 90px; text-align: right; }
   .canal-roas {
-    font-family: 'Roboto', sans-serif; font-size: 0.75rem;
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
     padding: 0.15rem 0.5rem; border-radius: 4px; min-width: 52px; text-align: center;
   }
   .roas-ok      { background: #052E16; color: #34D399; }
@@ -268,21 +264,21 @@ st.markdown("""
 
   /* ── P&L TABLE ── */
   .pnl-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #2E2E2A; }
+  .pnl-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #1A2535; }
   .pnl-table tr:last-child td { border-bottom: none; }
-  .pnl-table .pnl-label { color: #8C8C87; }
-  .pnl-table .pnl-val { font-family: 'Roboto', sans-serif; text-align: right; color: #D8D8D3; }
-  .pnl-table .pnl-total td { border-top: 1px solid #D65E67; padding-top: 0.7rem; }
-  .pnl-table .pnl-total .pnl-label { color: #D65E67; font-weight: 700; }
-  .pnl-table .pnl-total .pnl-val   { color: #D65E67; font-weight: 700; }
+  .pnl-table .pnl-label { color: #94A3B8; }
+  .pnl-table .pnl-val { font-family: 'DM Mono', monospace; text-align: right; color: #E2E8F0; }
+  .pnl-table .pnl-total td { border-top: 1px solid #38BDF8; padding-top: 0.7rem; }
+  .pnl-table .pnl-total .pnl-label { color: #38BDF8; font-weight: 700; }
+  .pnl-table .pnl-total .pnl-val   { color: #38BDF8; font-weight: 700; }
   .pnl-table .pnl-neg { color: #F87171 !important; }
   .pnl-table .pnl-pos { color: #34D399 !important; }
-  .pnl-section td { background: #141310; color: #767672 !important;
+  .pnl-section td { background: #0B1017; color: #475569 !important;
     font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 0.9rem; }
 
   /* ── DIAGNOSIS BOX ── */
   .diag-box {
-    background: #232320;
+    background: #0D1420;
     border: 1px solid #DC2626; border-left: 4px solid #DC2626;
     border-radius: 8px; padding: 1.1rem 1.3rem; margin-top: 0.75rem;
   }
@@ -297,11 +293,11 @@ st.markdown("""
   .diag-box.warning .diag-title { color: #FBBF24; }
   .diag-box.ok .diag-title      { color: #34D399; }
   .diag-box.purple .diag-title  { color: #C084FC; }
-  .diag-body { font-size: 0.85rem; color: #8C8C87; line-height: 1.75; }
+  .diag-body { font-size: 0.85rem; color: #94A3B8; line-height: 1.75; }
 
   /* ── EQUILIBRIO BAR ── */
   .eq-bar-bg {
-    background: #2E2E2A; border-radius: 4px; height: 10px;
+    background: #1A2535; border-radius: 4px; height: 10px;
     position: relative; overflow: hidden; margin: 0.5rem 0;
   }
   .eq-bar-fill {
@@ -310,42 +306,42 @@ st.markdown("""
   }
   .eq-marker {
     position: absolute; top: -3px; width: 2px; height: 16px;
-    background: #EDEDEB;
+    background: #F1F5F9;
   }
 
   /* ── DIVIDER ── */
-  .sdiv { border: none; border-top: 1px solid #2E2E2A; margin: 1.75rem 0; }
+  .sdiv { border: none; border-top: 1px solid #1A2535; margin: 1.75rem 0; }
 
   /* ── FOOTER ── */
   .footer-cta {
-    background: linear-gradient(135deg, #232320 0%, #2A2320 100%);
-    border: 1px solid #2E2E2A; border-radius: 12px;
+    background: linear-gradient(135deg, #0D1420 0%, #0C1E35 100%);
+    border: 1px solid #1A2535; border-radius: 12px;
     padding: 1.75rem 2rem; text-align: center; margin-top: 2rem;
   }
 
   /* ── INPUTS ── */
   .stNumberInput input {
-    background: #232320 !important; border: 1px solid #2E2E2A !important;
-    color: #EDEDEB !important; font-family: 'Roboto', sans-serif !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
+    color: #E8EDF5 !important; font-family: 'DM Mono', monospace !important;
     border-radius: 6px !important;
   }
   div[data-testid="stExpander"] {
-    background: #232320 !important; border: 1px solid #2E2E2A !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
     border-radius: 8px !important;
   }
-  .streamlit-expanderHeader { color: #8C8C87 !important; }
+  .streamlit-expanderHeader { color: #94A3B8 !important; }
   .stTabs [data-baseweb="tab-list"] { background: transparent; gap: 4px; }
   .stTabs [data-baseweb="tab"] {
-    background: #232320 !important; border: 1px solid #2E2E2A !important;
-    color: #6E6E6A !important; border-radius: 6px 6px 0 0 !important;
+    background: #0D1420 !important; border: 1px solid #1A2535 !important;
+    color: #64748B !important; border-radius: 6px 6px 0 0 !important;
     font-size: 0.8rem !important; padding: 0.5rem 1rem !important;
   }
   .stTabs [aria-selected="true"] {
-    background: #2E2E2A !important; color: #D65E67 !important;
-    border-color: #D65E67 !important;
+    background: #111827 !important; color: #38BDF8 !important;
+    border-color: #38BDF8 !important;
   }
   .stTabs [data-baseweb="tab-panel"] {
-    background: #232320; border: 1px solid #2E2E2A;
+    background: #0D1420; border: 1px solid #1A2535;
     border-radius: 0 8px 8px 8px; padding: 1.25rem;
   }
 
@@ -358,8 +354,8 @@ st.markdown("""
   .main .block-container,
   section.main,
   .stMainBlockContainer {
-    background-color: #1A1A18 !important;
-    background: #1A1A18 !important;
+    background-color: #080C14 !important;
+    background: #080C14 !important;
   }
 </style>
 """, unsafe_allow_html=True)
@@ -402,8 +398,8 @@ def mc(label, value, sub=None, delta=None, kind="default", sm=False):
     </div>"""
 
 THEME = dict(
-    paper_bgcolor="#232320", plot_bgcolor="#232320",
-    font=dict(family="Roboto", color="#8C8C87", size=11),
+    paper_bgcolor="#0c1320", plot_bgcolor="#0c1320",
+    font=dict(family="DM Sans", color="#94A3B8", size=11),
     margin=dict(l=16, r=16, t=36, b=16),
 )
 
@@ -413,7 +409,7 @@ THEME = dict(
 # ─────────────────────────────────────────────────────────────────────────────
 
 CANALES_DEF = {
-    "Orgánico/SEO":   {"color": "#D65E67", "dot": "#D65E67"},
+    "Orgánico/SEO":   {"color": "#38BDF8", "dot": "#38BDF8"},
     "Paid Ads":       {"color": "#F87171", "dot": "#F87171"},
     "Email/CRM":      {"color": "#34D399", "dot": "#34D399"},
     "Marketplace":    {"color": "#FBBF24", "dot": "#FBBF24"},
@@ -737,24 +733,24 @@ def grafico_pl_waterfall(pl):
     ebitda = pl["ebitda_operativo"]
     measure = ["absolute"] + ["relative"] * (len(labels) - 2) + ["total"]
     vals.append(ebitda)
-    base_colors = ["#D65E67","#F87171","#F87171"]
+    base_colors = ["#38BDF8","#F87171","#F87171"]
     if tiene_mp:
         base_colors.append("#FBBF24")   # amarillo para comisiones MP
     base_colors += ["#FBBF24","#FBBF24","#FB923C"]
     colors_bar = base_colors + ["#34D399" if ebitda >= 0 else "#F87171"]
     fig = go.Figure(go.Waterfall(
         orientation="v", measure=measure, x=labels, y=vals,
-        connector=dict(line=dict(color="#2E2E2A", width=1)),
+        connector=dict(line=dict(color="#1A2535", width=1)),
         increasing=dict(marker_color="#34D399"),
         decreasing=dict(marker_color="#F87171"),
         totals=dict(marker_color="#34D399" if ebitda >= 0 else "#F87171"),
         text=[fmt_clp(v) for v in vals], textposition="outside",
-        textfont=dict(color="#C7C7C2", size=10),
+        textfont=dict(color="#CBD5E1", size=10),
     ))
-    fig.update_layout(title=dict(text="P&L Cascada — De Ingresos a EBITDA", font=dict(size=13, color="#C7C7C2")),
+    fig.update_layout(title=dict(text="P&L Cascada — De Ingresos a EBITDA", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#2E2E2A", zerolinecolor="#2E2E2A")
-    fig.update_xaxes(gridcolor="#2E2E2A")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def hex_rgba(hex_color, alpha=1.0):
@@ -773,16 +769,16 @@ def grafico_mix_canales(canales_data):
     fig.add_trace(go.Bar(name="Ingresos", x=nombres, y=ingresos,
                          marker_color=[hex_rgba(c, 0.5) for c in colores],
                          text=[fmt_clp(v) for v in ingresos], textposition="outside",
-                         textfont=dict(size=10, color="#8C8C87")))
+                         textfont=dict(size=10, color="#94A3B8")))
     fig.add_trace(go.Bar(name="Contribución Neta", x=nombres, y=contribs,
                          marker_color=colores,
                          text=[fmt_clp(v) for v in contribs], textposition="outside",
-                         textfont=dict(size=10, color="#C7C7C2")))
-    fig.update_layout(title=dict(text="Ingresos vs. Contribución por Canal", font=dict(size=13, color="#C7C7C2")),
-                      barmode="group", legend=dict(font=dict(color="#8C8C87"), bgcolor="#232320"),
+                         textfont=dict(size=10, color="#CBD5E1")))
+    fig.update_layout(title=dict(text="Ingresos vs. Contribución por Canal", font=dict(size=13, color="#CBD5E1")),
+                      barmode="group", legend=dict(font=dict(color="#94A3B8"), bgcolor="#0D1420"),
                       **THEME)
-    fig.update_yaxes(gridcolor="#2E2E2A", zerolinecolor="#2E2E2A")
-    fig.update_xaxes(gridcolor="#2E2E2A")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def grafico_roas_canales(canales_data):
@@ -792,16 +788,16 @@ def grafico_roas_canales(canales_data):
     fig = go.Figure(go.Bar(
         x=nombres, y=roas, marker_color=colores,
         text=[f"{r:.2f}x" for r in roas], textposition="outside",
-        textfont=dict(size=11, color="#C7C7C2"),
+        textfont=dict(size=11, color="#CBD5E1"),
     ))
     fig.add_hline(y=3.0, line_dash="dot", line_color="#34D399",
                   annotation_text="Óptimo ≥ 3x", annotation_font_color="#34D399", annotation_position="top right")
     fig.add_hline(y=1.5, line_dash="dot", line_color="#FBBF24",
                   annotation_text="Mínimo 1.5x", annotation_font_color="#FBBF24", annotation_position="bottom right")
-    fig.update_layout(title=dict(text="ROAS por Canal", font=dict(size=13, color="#C7C7C2")),
+    fig.update_layout(title=dict(text="ROAS por Canal", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#2E2E2A", zerolinecolor="#2E2E2A", title="ROAS", title_font=dict(color="#767672"))
-    fig.update_xaxes(gridcolor="#2E2E2A")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535", title="ROAS", title_font=dict(color="#475569"))
+    fig.update_xaxes(gridcolor="#1A2535")
     return fig
 
 def grafico_retencion(cohorte_rows):
@@ -809,8 +805,8 @@ def grafico_retencion(cohorte_rows):
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["clientes"], mode="lines+markers", name="Clientes Activos",
-        line=dict(color="#D65E67", width=2), marker=dict(size=5),
-        fill="tozeroy", fillcolor="rgba(214,94,103,0.08)",
+        line=dict(color="#38BDF8", width=2), marker=dict(size=5),
+        fill="tozeroy", fillcolor="rgba(56,189,248,0.08)",
     ))
     fig.add_trace(go.Scatter(
         x=df["mes"], y=df["ltv_acum"], mode="lines+markers", name="LTV Acumulado / Cliente",
@@ -818,9 +814,9 @@ def grafico_retencion(cohorte_rows):
         yaxis="y2",
     ))
     fig.update_layout(
-        title=dict(text="Cohorte: Retención de Clientes & LTV Acumulado (12 meses)", font=dict(size=13, color="#C7C7C2")),
-        legend=dict(font=dict(color="#8C8C87"), bgcolor="#232320"),
-        yaxis=dict(title="Clientes activos", gridcolor="#2E2E2A", color="#8C8C87"),
+        title=dict(text="Cohorte: Retención de Clientes & LTV Acumulado (12 meses)", font=dict(size=13, color="#CBD5E1")),
+        legend=dict(font=dict(color="#94A3B8"), bgcolor="#0D1420"),
+        yaxis=dict(title="Clientes activos", gridcolor="#1A2535", color="#94A3B8"),
         yaxis2=dict(title="LTV acum. (CLP)", overlaying="y", side="right", color="#34D399", gridcolor="rgba(0,0,0,0)"),
         **THEME,
     )
@@ -835,15 +831,15 @@ def grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, activos):
     fig = go.Figure(go.Waterfall(
         orientation="v", measure=["absolute","relative","relative","relative"],
         x=labels, y=vals,
-        connector=dict(line=dict(color="#2E2E2A", width=1)),
+        connector=dict(line=dict(color="#1A2535", width=1)),
         decreasing=dict(marker_color="#F87171"),
-        totals=dict(marker_color="#D65E67"),
+        totals=dict(marker_color="#38BDF8"),
         text=[fmt_clp(v) for v in vals], textposition="outside",
-        textfont=dict(color="#C7C7C2", size=10),
+        textfont=dict(color="#CBD5E1", size=10),
     ))
-    fig.update_layout(title=dict(text="Impacto Cyber sobre Ingresos Base", font=dict(size=13, color="#C7C7C2")),
+    fig.update_layout(title=dict(text="Impacto Cyber sobre Ingresos Base", font=dict(size=13, color="#CBD5E1")),
                       showlegend=False, **THEME)
-    fig.update_yaxes(gridcolor="#2E2E2A", zerolinecolor="#2E2E2A")
+    fig.update_yaxes(gridcolor="#1A2535", zerolinecolor="#1A2535")
     return fig
 
 def grafico_equilibrio(pl):
@@ -866,14 +862,14 @@ with st.sidebar:
     <img src="data:image/png;base64,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"
                style="height:56px; width:auto; margin-bottom:1.25rem; border-radius:10px;"
                alt="aovalle.com logo" />
-      <div style="font-size:1.05rem;font-weight:700;color:#EDEDEB;letter-spacing:-0.01em;">
+      <div style="font-size:1.05rem;font-weight:700;color:#F1F5F9;letter-spacing:-0.01em;">
         📊 RetailPulse Latam | Chile
       </div>
-      <div style="font-size:0.65rem;color:#D65E67;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
+      <div style="font-size:0.65rem;color:#38BDF8;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.15rem;">
         Simulador P&L · Ecommerce · v2.0 Beta
       </div>
     </div>
-    <hr style="border:none;border-top:1px solid #2E2E2A;margin:0.5rem 0 0.3rem 0;"/>
+    <hr style="border:none;border-top:1px solid #1A2535;margin:0.5rem 0 0.3rem 0;"/>
     """, unsafe_allow_html=True)
 
     modo = st.radio("Modo de uso", ["Gerente Ecommerce", "Dueño PyME"],
@@ -935,7 +931,7 @@ with st.sidebar:
                     mp_com_def = mp_data["default"]
                     # Mostrar rango referencial
                     st.markdown(
-                        f'<div style="font-size:0.68rem;color:#6E6E6A;margin:-0.3rem 0 0.4rem 0;">'
+                        f'<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
                         f'Comisión típica: {mp_data["min"]:.0f}% – {mp_data["max"]:.0f}%</div>',
                         unsafe_allow_html=True
                     )
@@ -957,7 +953,7 @@ with st.sidebar:
                         cpc = st.number_input(label_cpc, 0, 5000, d["cpc"], 10, key=f"cpc_{nombre}")
                         inversion = 0
                         st.markdown(
-                            '<div style="font-size:0.68rem;color:#6E6E6A;margin:-0.3rem 0 0.4rem 0;">'
+                            '<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
                             'Costo variable · Se calcula como Tráfico × CPC</div>',
                             unsafe_allow_html=True
                         )
@@ -972,7 +968,7 @@ with st.sidebar:
                         )
                         cpc = 0
                         st.markdown(
-                            '<div style="font-size:0.68rem;color:#6E6E6A;margin:-0.3rem 0 0.4rem 0;">'
+                            '<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.4rem 0;">'
                             'Costo fijo mensual · Incluye agencia SEO, plataforma email, etc.</div>',
                             unsafe_allow_html=True
                         )
@@ -1031,7 +1027,7 @@ with st.sidebar:
         )
         ev = EVENTOS_CYBER_CL[evento_cyber_sel]
         st.markdown(
-            f'<div style="font-size:0.68rem;color:#6E6E6A;margin:-0.3rem 0 0.6rem 0;">'
+            f'<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.6rem 0;">'
             f'Tráfico ×{ev["multiplicador"]} · CPC +{ev["inflacion_cpc"]*100:.0f}% · {ev["mes"]}</div>',
             unsafe_allow_html=True
         )
@@ -1042,7 +1038,7 @@ with st.sidebar:
         )
         pas = PASARELAS_CL[pasarela_sel]
         st.markdown(
-            f'<div style="font-size:0.68rem;color:#6E6E6A;margin:-0.3rem 0 0.6rem 0;">'
+            f'<div style="font-size:0.68rem;color:#64748B;margin:-0.3rem 0 0.6rem 0;">'
             f'Comisión: {pas["label"]}</div>',
             unsafe_allow_html=True
         )
@@ -1051,10 +1047,10 @@ with st.sidebar:
         cyber_c_on = st.checkbox("C: Inflación CAC (saturación subasta)", value=True)
 
     st.markdown("""
-    <hr style="border:none;border-top:1px solid #2E2E2A;margin:1.2rem 0 0.8rem 0;"/>
-    <div style="font-size:0.62rem;color:#6E6E6A;text-align:center;line-height:1.6;">
+    <hr style="border:none;border-top:1px solid #1A2535;margin:1.2rem 0 0.8rem 0;"/>
+    <div style="font-size:0.62rem;color:#2D3748;text-align:center;line-height:1.6;">
       RetailPulse Latam v2.0 · Chile<br>
-      <a href="https://www.aovalle.com" style="color:#D65E67;text-decoration:none;">aovalle.com</a>
+      <a href="https://www.aovalle.com" style="color:#38BDF8;text-decoration:none;">aovalle.com</a>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1133,7 +1129,7 @@ badge_html = (
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">🏪 Modo PyME</span>'
     if es_pyme else
-    '<span style="background:#2A1F21;color:#D65E67;border:1px solid #3A2E30;'
+    '<span style="background:#0C2340;color:#38BDF8;border:1px solid #1E3A5F;'
     'padding:0.2rem 0.7rem;border-radius:999px;font-size:0.65rem;font-weight:700;'
     'letter-spacing:0.1em;text-transform:uppercase;margin-left:0.75rem;">💼 Modo Gerente</span>'
 )
@@ -1147,7 +1143,7 @@ st.markdown(f"""
     <h1 style="font-size:1.85rem;margin:0;">{titulo}</h1>
     {badge_html}
   </div>
-  <p style="color:#767672;font-size:0.85rem;margin:0.4rem 0 0 0;">{subtitulo}</p>
+  <p style="color:#475569;font-size:0.85rem;margin:0.4rem 0 0 0;">{subtitulo}</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -1247,12 +1243,12 @@ with tab_pl:
     signo      = "por encima" if dist_pe >= 0 else "por debajo"
 
     st.markdown(f"""
-    <div style="background:#232320;border:1px solid #2E2E2A;border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:1rem;">
+    <div style="background:#0D1420;border:1px solid #1A2535;border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:1rem;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0.6rem;">
-        <span style="font-size:0.72rem;color:#767672;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">
+        <span style="font-size:0.72rem;color:#475569;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">
           Ingresos actuales vs. punto de equilibrio
         </span>
-        <span style="font-family:'Roboto',sans-serif;font-size:0.85rem;color:{color_text};">
+        <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:{color_text};">
           {fmt_clp(abs(dist_pe))} {signo} del equilibrio
         </span>
       </div>
@@ -1261,10 +1257,10 @@ with tab_pl:
         <div class="eq-marker" style="left:{pct_pe*100:.1f}%;"></div>
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:0.4rem;">
-        <span style="font-size:0.7rem;color:#767672;">$0</span>
-        <span style="font-size:0.7rem;color:#8C8C87;">
+        <span style="font-size:0.7rem;color:#475569;">$0</span>
+        <span style="font-size:0.7rem;color:#94A3B8;">
           PE: {fmt_clp(pl['punto_equilibrio_ingresos'])}
-          <span style="color:#767672"> · </span>
+          <span style="color:#475569"> · </span>
           Actual: <span style="color:{color_text};">{fmt_clp(pl['total_ingresos'])}</span>
         </span>
       </div>
@@ -1307,9 +1303,9 @@ with tab_pl:
             <td class="pnl-label">Margen de Contribución</td>
             <td class="pnl-val {neg_cls(pl['margen_contribucion'])}">{fmt_clp(pl['margen_contribucion'])}</td>
           </tr>
-          <tr><td class="pnl-label" style="font-size:0.72rem;color:#767672;">
+          <tr><td class="pnl-label" style="font-size:0.72rem;color:#475569;">
             % sobre ingresos</td>
-            <td class="pnl-val" style="font-size:0.72rem;color:#6E6E6A;">{margen_contribucion_pct*100:.1f}%</td>
+            <td class="pnl-val" style="font-size:0.72rem;color:#64748B;">{margen_contribucion_pct*100:.1f}%</td>
           </tr>
 
           <tr class="pnl-section"><td colspan="2">COSTOS FIJOS</td></tr>
@@ -1320,14 +1316,14 @@ with tab_pl:
             <td class="pnl-label">EBITDA Operativo</td>
             <td class="pnl-val {neg_cls(pl['ebitda_operativo'])}">{fmt_clp(pl['ebitda_operativo'])}</td>
           </tr>
-          <tr><td class="pnl-label" style="font-size:0.72rem;color:#767672;">Margen neto</td>
-              <td class="pnl-val" style="font-size:0.72rem;color:#6E6E6A;">{pl['margen_neto_pct']*100:.1f}%</td>
+          <tr><td class="pnl-label" style="font-size:0.72rem;color:#475569;">Margen neto</td>
+              <td class="pnl-val" style="font-size:0.72rem;color:#64748B;">{pl['margen_neto_pct']*100:.1f}%</td>
           </tr>
         </table>
         """, unsafe_allow_html=True)
 
     with wf_col:
-        st.plotly_chart(grafico_pl_waterfall(pl), use_container_width=True)
+        st.plotly_chart(grafico_pl_waterfall(pl), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1347,9 +1343,9 @@ with tab_pl:
         if diag.get("cta"):
             st.markdown(
                 '<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;'
-                'background:#232320;border:1px solid #2E2E2A;border-top:none;border-radius:0 0 8px 8px;">'
+                'background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;">'
                 '<a href="https://www.aovalle.com" target="_blank" '
-                'style="color:#D65E67;font-size:0.78rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;">'
+                'style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;">'
                 '→ Solicitar diagnóstico personalizado · aovalle.com ↗</a></div>',
                 unsafe_allow_html=True,
             )
@@ -1380,8 +1376,8 @@ with tab_canales:
                 f'COM {com_pct:.1f}%</div>'
             )
             extra_info = (
-                f'<div style="font-family:\'Roboto\',sans-serif;font-size:0.72rem;' +
-                f'color:#6E6E6A;min-width:130px;text-align:right;">' +
+                f'<div style="font-family:\'DM Mono\',monospace;font-size:0.72rem;' +
+                f'color:#64748B;min-width:130px;text-align:right;">' +
                 f'{mp_label} · ROAS <span style="color:#FBBF24;">{roas_c:.1f}x</span></div>'
             )
         else:
@@ -1389,8 +1385,8 @@ with tab_canales:
             roas_cls   = "roas-ok" if roas_c >= 3 else "roas-warning" if roas_c >= 1.5 else "roas-danger"
             badge_html = f'<div class="canal-roas {roas_cls}">ROAS {roas_c:.1f}x</div>'
             extra_info = (
-                f'<div style="font-family:\'Roboto\',sans-serif;font-size:0.72rem;' +
-                f'color:#6E6E6A;min-width:90px;text-align:right;">' +
+                f'<div style="font-family:\'DM Mono\',monospace;font-size:0.72rem;' +
+                f'color:#64748B;min-width:90px;text-align:right;">' +
                 f'Contrib: <span style="color:{contrib_color};">{fmt_clp(canal["contribucion"])}</span></div>'
             )
 
@@ -1411,9 +1407,9 @@ with tab_canales:
 
     gc1, gc2 = st.columns(2)
     with gc1:
-        st.plotly_chart(grafico_mix_canales(canales_data), use_container_width=True)
+        st.plotly_chart(grafico_mix_canales(canales_data), use_container_width=True, config={'scrollZoom': False})
     with gc2:
-        st.plotly_chart(grafico_roas_canales(canales_data), use_container_width=True)
+        st.plotly_chart(grafico_roas_canales(canales_data), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1499,7 +1495,7 @@ with tab_retencion:
         ), unsafe_allow_html=True)
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
-    st.plotly_chart(grafico_retencion(cohorte_rows), use_container_width=True)
+    st.plotly_chart(grafico_retencion(cohorte_rows), use_container_width=True, config={'scrollZoom': False})
 
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
 
@@ -1532,7 +1528,7 @@ with tab_retencion:
             f"Ofrece un descuento para la segunda compra. Es la acción de mayor impacto con menor costo."
         )
         st.markdown(f'<div class="diag-box"><div class="diag-title">🔴 CHURN ELEVADO — Base de Clientes en Erosión</div><div class="diag-body">{msg_churn}</div></div>', unsafe_allow_html=True)
-        st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#232320;border:1px solid #2E2E2A;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#D65E67;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Diagnóstico de retención · aovalle.com ↗</a></div>', unsafe_allow_html=True)
+        st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Diagnóstico de retención · aovalle.com ↗</a></div>', unsafe_allow_html=True)
     elif retencion_12m >= 0.40:
         st.markdown(f'<div class="diag-box ok"><div class="diag-title">✅ RETENCIÓN SALUDABLE</div><div class="diag-body">Tu tasa de retención a 12 meses es <strong>{retencion_12m*100:.0f}%</strong>. Esto es superior al benchmark promedio de ecommerce en Chile (~25-35%). El foco ahora debe ser incrementar la frecuencia de recompra para elevar el LTV por cohorte.</div></div>', unsafe_allow_html=True)
 
@@ -1547,10 +1543,10 @@ with tab_cyber:
         st.markdown("""
         <div style="text-align:center;padding:3rem 1rem;">
           <div style="font-size:2.5rem;margin-bottom:1rem;">⚡</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#C7C7C2;margin-bottom:0.5rem;">
+          <div style="font-size:1.1rem;font-weight:600;color:#CBD5E1;margin-bottom:0.5rem;">
             Módulo de Eventos Digitales desactivado
           </div>
-          <div style="font-size:0.85rem;color:#767672;max-width:420px;margin:0 auto;">
+          <div style="font-size:0.85rem;color:#475569;max-width:420px;margin:0 auto;">
             Activa "Escenarios de evento" en el sidebar para simular CyberDay, Black Friday,
             Hot Sale y otros eventos digitales chilenos sobre tu P&L actual.
           </div>
@@ -1560,27 +1556,27 @@ with tab_cyber:
         ev_activo  = EVENTOS_CYBER_CL.get(evento_cyber_sel, {})
         pas_activo = PASARELAS_CL.get(pasarela_sel, {})
         st.markdown(f"""
-        <div style="background:#232320;border:1px solid #2E2E2A;border-radius:8px;
+        <div style="background:#0D1420;border:1px solid #1A2535;border-radius:8px;
                     padding:0.75rem 1.25rem;margin-bottom:1rem;
                     display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
           <div>
-            <span style="font-size:0.62rem;color:#6E6E6A;text-transform:uppercase;
+            <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Evento</span><br>
-            <span style="font-size:0.9rem;font-weight:600;color:#D65E67;">
+            <span style="font-size:0.9rem;font-weight:600;color:#38BDF8;">
               {evento_cyber_sel}</span>
-            <span style="font-size:0.75rem;color:#6E6E6A;margin-left:0.5rem;">
+            <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · Tráfico ×{ev_activo.get('multiplicador',4)} · {ev_activo.get('mes','—')}</span>
           </div>
           <div>
-            <span style="font-size:0.62rem;color:#6E6E6A;text-transform:uppercase;
+            <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Pasarela</span><br>
             <span style="font-size:0.9rem;font-weight:600;color:#FBBF24;">
               {pasarela_sel}</span>
-            <span style="font-size:0.75rem;color:#6E6E6A;margin-left:0.5rem;">
+            <span style="font-size:0.75rem;color:#64748B;margin-left:0.5rem;">
               · {pas_activo.get('label','—')}</span>
           </div>
           <div>
-            <span style="font-size:0.62rem;color:#6E6E6A;text-transform:uppercase;
+            <span style="font-size:0.62rem;color:#64748B;text-transform:uppercase;
                          letter-spacing:0.1em;">Inflación CPC</span><br>
             <span style="font-size:0.9rem;font-weight:600;color:#F87171;">
               +{ev_activo.get('inflacion_cpc',0.5)*100:.0f}%</span>
@@ -1624,9 +1620,10 @@ with tab_cyber:
         cyber_w1, cyber_w2 = st.columns(2)
         with cyber_w1:
             st.plotly_chart(
-                grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, [cyber_a_on, cyber_b_on, cyber_c_on]),
-                use_container_width=True
-            )
+    grafico_waterfall_cyber(pl, cyber_a, cyber_b, cyber_c, [cyber_a_on, cyber_b_on, cyber_c_on]),
+    use_container_width=True,
+    config={'scrollZoom': False}
+)
         with cyber_w2:
             # EBITDA antes vs después del Cyber
             fig_ebitda = go.Figure()
@@ -1636,16 +1633,16 @@ with tab_cyber:
                 marker_color=["#34D399" if pl["ebitda_operativo"] >= 0 else "#F87171",
                               "#34D399" if ebitda_post_cyber >= 0 else "#F87171"],
                 text=[fmt_clp(pl["ebitda_operativo"]), fmt_clp(ebitda_post_cyber)],
-                textposition="outside", textfont=dict(color="#C7C7C2", size=11),
+                textposition="outside", textfont=dict(color="#CBD5E1", size=11),
                 width=0.4,
             ))
-            fig_ebitda.add_hline(y=0, line_color="#767672", line_width=1)
+            fig_ebitda.add_hline(y=0, line_color="#475569", line_width=1)
             fig_ebitda.update_layout(
-                title=dict(text="EBITDA: Normal vs. Post-Cyber", font=dict(size=13, color="#C7C7C2")),
+                title=dict(text="EBITDA: Normal vs. Post-Cyber", font=dict(size=13, color="#CBD5E1")),
                 showlegend=False, **THEME,
             )
-            fig_ebitda.update_yaxes(gridcolor="#2E2E2A", zerolinecolor="#767672")
-            st.plotly_chart(fig_ebitda, use_container_width=True)
+            fig_ebitda.update_yaxes(gridcolor="#1A2535", zerolinecolor="#475569")
+            st.plotly_chart(fig_ebitda, use_container_width=True, config={'scrollZoom': False})
 
         # Diagnósticos Cyber
         st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
@@ -1665,7 +1662,7 @@ with tab_cyber:
               </div>
             </div>
             """, unsafe_allow_html=True)
-            st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#232320;border:1px solid #2E2E2A;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#D65E67;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Preparación Cyber · aovalle.com ↗</a></div>', unsafe_allow_html=True)
+            st.markdown('<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;"><a href="https://www.aovalle.com" target="_blank" style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">→ Preparación Cyber · aovalle.com ↗</a></div>', unsafe_allow_html=True)
         else:
             st.markdown(f"""
             <div class="diag-box ok">
@@ -1725,14 +1722,14 @@ with tab_ley:
 
     # ── HEADER ──
     st.markdown("""
-    <div style="background:#232320;border:1px solid #2E2E2A;border-left:4px solid #D65E67;
+    <div style="background:#0D1420;border:1px solid #1A2535;border-left:4px solid #38BDF8;
                 border-radius:8px;padding:1rem 1.5rem;margin-bottom:1.5rem;">
-      <div style="font-size:0.65rem;color:#D65E67;font-weight:700;letter-spacing:0.14em;
+      <div style="font-size:0.65rem;color:#38BDF8;font-weight:700;letter-spacing:0.14em;
                   text-transform:uppercase;margin-bottom:0.4rem;">
         🔒 Módulo de Cumplimiento · Solo disponible en versión Chile
       </div>
-      <div style="font-size:0.9rem;color:#C7C7C2;line-height:1.65;">
-        La <strong style="color:#EDEDEB;">Ley N°21.719</strong> entra en vigencia el
+      <div style="font-size:0.9rem;color:#CBD5E1;line-height:1.65;">
+        La <strong style="color:#F1F5F9;">Ley N°21.719</strong> entra en vigencia el
         <strong style="color:#FBBF24;">1 de diciembre de 2026</strong>. Este módulo simula
         la exposición financiera de tu ecommerce ante posibles multas y cuantifica el costo
         de implementación del cumplimiento (valores referenciales). <em>No constituye asesoría legal.</em>
@@ -1898,21 +1895,21 @@ with tab_ley:
             pct = val / costo_total_impl * 100 if costo_total_impl > 0 else 0
             st.markdown(f"""
             <div style="display:flex;justify-content:space-between;align-items:center;
-                        padding:0.55rem 0;border-bottom:1px solid #2E2E2A;">
-              <span style="font-size:0.83rem;color:#8C8C87;">{label}</span>
-              <span style="font-family:'Roboto',sans-serif;font-size:0.83rem;
+                        padding:0.55rem 0;border-bottom:1px solid #1A2535;">
+              <span style="font-size:0.83rem;color:#94A3B8;">{label}</span>
+              <span style="font-family:'DM Mono',monospace;font-size:0.83rem;
                            color:#F87171;">{fmt_clp(val)}</span>
             </div>
             """, unsafe_allow_html=True)
 
         st.markdown(f"""
         <div style="display:flex;justify-content:space-between;align-items:center;
-                    padding:0.7rem 0;border-top:2px solid #D65E67;margin-top:0.3rem;">
-          <span style="font-size:0.88rem;color:#D65E67;font-weight:700;">
+                    padding:0.7rem 0;border-top:2px solid #38BDF8;margin-top:0.3rem;">
+          <span style="font-size:0.88rem;color:#38BDF8;font-weight:700;">
             Total neto (con {cumplimiento_actual}/5 ya cumplidos)
           </span>
-          <span style="font-family:'Roboto',sans-serif;font-size:0.88rem;
-                       color:#D65E67;font-weight:700;">{fmt_clp(costo_neto_impl)}</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.88rem;
+                       color:#38BDF8;font-weight:700;">{fmt_clp(costo_neto_impl)}</span>
         </div>
         """, unsafe_allow_html=True)
 
@@ -1924,10 +1921,10 @@ with tab_ley:
             name="Multa máxima estimada",
             x=["Multa estimada", "Costo implementación"],
             y=[multa_ajustada, costo_neto_impl],
-            marker_color=["#F87171", "#D65E67"],
+            marker_color=["#F87171", "#38BDF8"],
             text=[fmt_clp(multa_ajustada), fmt_clp(costo_neto_impl)],
             textposition="outside",
-            textfont=dict(color="#C7C7C2", size=11),
+            textfont=dict(color="#CBD5E1", size=11),
             width=0.5,
         ))
         fig_ley.add_hline(
@@ -1938,13 +1935,13 @@ with tab_ley:
         )
         fig_ley.update_layout(
             showlegend=False,
-            paper_bgcolor="#1A1A18", plot_bgcolor="#1A1A18",
-            font=dict(family="Roboto", color="#8C8C87", size=11),
+            paper_bgcolor="#080C14", plot_bgcolor="#080C14",
+            font=dict(family="Roboto", color="#94A3B8", size=11),
             margin=dict(l=16, r=16, t=36, b=16),
-            yaxis=dict(gridcolor="#2E2E2A", zerolinecolor="#2E2E2A"),
-            xaxis=dict(gridcolor="#2E2E2A"),
+            yaxis=dict(gridcolor="#1A2535", zerolinecolor="#1A2535"),
+            xaxis=dict(gridcolor="#1A2535"),
         )
-        st.plotly_chart(fig_ley, use_container_width=True)
+        st.plotly_chart(fig_ley, use_container_width=True, config={'scrollZoom': False})
 
     # ── CHECKLIST DE CUMPLIMIENTO ──
     st.markdown('<hr class="sdiv">', unsafe_allow_html=True)
@@ -1973,13 +1970,13 @@ with tab_ley:
         estado_icon  = "✅" if cumple else "❌"
         estado_texto = "Cumplido" if cumple else "Pendiente"
         st.markdown(f"""
-        <div style="background:#232320;border:1px solid #2E2E2A;border-left:3px solid {estado_color};
+        <div style="background:#0D1420;border:1px solid #1A2535;border-left:3px solid {estado_color};
                     border-radius:8px;padding:0.85rem 1.1rem;margin-bottom:0.5rem;">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <div>
-              <span style="font-size:0.88rem;font-weight:600;color:#EDEDEB;">{estado_icon} {titulo}</span>
-              <div style="font-size:0.78rem;color:#6E6E6A;margin-top:0.25rem;">{accion}</div>
-              <div style="font-size:0.72rem;color:#767672;margin-top:0.2rem;font-style:italic;">{fundamento}</div>
+              <span style="font-size:0.88rem;font-weight:600;color:#F1F5F9;">{estado_icon} {titulo}</span>
+              <div style="font-size:0.78rem;color:#64748B;margin-top:0.25rem;">{accion}</div>
+              <div style="font-size:0.72rem;color:#475569;margin-top:0.2rem;font-style:italic;">{fundamento}</div>
             </div>
             <span style="font-size:0.68rem;font-weight:700;color:{estado_color};
                          white-space:nowrap;margin-left:1rem;">{estado_texto}</span>
@@ -2030,19 +2027,19 @@ with tab_ley:
 
     st.markdown(
         '<div style="margin-top:-0.5rem;margin-bottom:0.75rem;padding:0.55rem 1.3rem;'
-        'background:#232320;border:1px solid #2E2E2A;border-top:none;border-radius:0 0 8px 8px;">'
+        'background:#0D1420;border:1px solid #1A2535;border-top:none;border-radius:0 0 8px 8px;">'
         '<a href="https://www.aovalle.com" target="_blank" '
-        'style="color:#D65E67;font-size:0.78rem;font-weight:600;text-decoration:none;">'
+        'style="color:#38BDF8;font-size:0.78rem;font-weight:600;text-decoration:none;">'
         '→ Solicitar asesoría en cumplimiento Ley 21.719 · aovalle.com ↗</a></div>',
         unsafe_allow_html=True
     )
 
     # Disclaimer legal
     st.markdown("""
-    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#232320;
-                border:1px solid #2E2E2A;border-radius:6px;
-                font-size:0.72rem;color:#767672;line-height:1.6;">
-      <strong style="color:#6E6E6A;">Disclaimer:</strong>
+    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#0B1117;
+                border:1px solid #1A2535;border-radius:6px;
+                font-size:0.72rem;color:#475569;line-height:1.6;">
+      <strong style="color:#64748B;">Disclaimer:</strong>
       Este módulo es una herramienta de simulación financiera referencial, no constituye
       asesoría legal. Los rangos de multas y costos son estimaciones basadas en la
       Ley N°21.719, el valor UTM vigente y benchmarks de implementación GDPR/Chile.
@@ -2069,17 +2066,17 @@ else:
 
 st.markdown(f"""
 <div class="footer-cta">
-  <div style="font-size:0.62rem;color:#D65E67;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.5rem;">
+  <div style="font-size:0.62rem;color:#38BDF8;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.5rem;">
     CONVIERTE ESTE DIAGNÓSTICO EN CRECIMIENTO REAL
   </div>
-  <div style="font-size:1.15rem;font-weight:700;color:#EDEDEB;margin-bottom:0.65rem;">
+  <div style="font-size:1.15rem;font-weight:700;color:#F1F5F9;margin-bottom:0.65rem;">
     {headline}
   </div>
-  <div style="font-size:0.85rem;color:#6E6E6A;max-width:580px;margin:0 auto 1.25rem auto;line-height:1.7;">
+  <div style="font-size:0.85rem;color:#64748B;max-width:580px;margin:0 auto 1.25rem auto;line-height:1.7;">
     {sub_copy}
   </div>
   <a href="https://www.aovalle.com" target="_blank"
-     style="display:inline-block;background:#D65E67;color:#1A1A18;font-weight:700;
+     style="display:inline-block;background:#38BDF8;color:#080C14;font-weight:700;
             font-size:0.82rem;padding:0.6rem 1.75rem;border-radius:6px;text-decoration:none;
             letter-spacing:0.06em;text-transform:uppercase;">
     Solicitar Diagnóstico → aovalle.com
