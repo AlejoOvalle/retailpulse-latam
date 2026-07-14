@@ -130,9 +130,8 @@ def pantalla_login():
 if "autenticado" not in st.session_state:
     st.session_state["autenticado"] = False
 
-if not st.session_state["autenticado"]:
-    pantalla_login()
-    st.stop()
+st.session_state["autenticado"] = True
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CSS
